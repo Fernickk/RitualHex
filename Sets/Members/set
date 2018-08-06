@@ -2,335 +2,111 @@
 game: ritualhex
 stylesheet: member
 styling:
-	ritualhex-equipment:
-		mse_version: 2.0.1
 	ritualhex-member:
 		mse_version: 2.0.1
-	ritualhex-memberHoriz:
+	ritualhex-minion:
 		mse_version: 2.0.1
-	ritualhex-minion: mse_version: 2.0.1
-	ritualhex-standard: mse_version: 2.0.1
-	ritualhex-tracker: mse_version: 2.0.1
+	ritualhex-standard:
+		mse_version: 2.0.1
+	ritualhex-tracker:
+		mse_version: 2.0.1
 card:
 	has_styling: false
 	notes: 
 	time_created: 2015-10-06 02:52:22
-	time_modified: 2015-10-25 02:57:52
+	time_modified: 2015-10-06 04:06:45
 	extra_data:
 		ritualhex-member:
 			mse_version: 2.0.1
-		ritualhex-minion: mse_version: 2.0.1
-		ritualhex-standard: mse_version: 2.0.1
-		ritualhex-tracker: mse_version: 2.0.1
-	name: "Left Claw"
-	rule_text: "Can be used as a hand.\n<sym>P</sym>3: <b>Strike<soft-line>\n</b>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d+<sym>S</sym><soft-line>\nCannot be performed while the claw is not free.</soft-line>"
-	back_text: "J"
-	copies: "1"
-card:
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-25 02:58:16
-	extra_data:
-		ritualhex-member:
+		ritualhex-minion:
 			mse_version: 2.0.1
-	name: "Left Wing"
-	rule_text: "<sym>P</sym>All: <b>Flee<soft-line>\n</b>EVADE: 3<soft-line>\nNeeds two active wings to be performed</soft-line></soft-line>"
-	back_text: "L"
-	copies: "1"
+		ritualhex-standard:
+			mse_version: 2.0.1
+		ritualhex-tracker:
+			mse_version: 2.0.1
+	name: "Claw - Member"
+	rule_text: "Counts as a hand for equipment.\n<sym>P</sym>3: <b>Claw<soft-line>\n</soft-line></b><i>Attack action. Target fighter.<soft-line>\n</i>Pass </soft-line>(<sym>S</sym><sym>C</sym>12+<sym>D</sym>) to deal 1d+<sym>S</sym> (minimum 1) wounds to target."
 card:
-	stylesheet: memberHoriz
 	has_styling: false
 	notes: 
 	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-25 03:00:05
+	time_modified: 2015-10-08 03:43:03
 	extra_data:
 		ritualhex-member: mse_version: 2.0.1
-		ritualhex-memberHoriz:
-			mse_version: 2.0.1
-	name: "Feet"
-	rule_text: "<sym>P</sym>6: <b>Strike</b><soft-line>\n</soft-line><soft-line>Pass (<sym>SC</sym>12+<sym>D</sym>): Effect\nDMG: 1d-1+<sym>S</sym></soft-line>\n<sym>P</sym>All: <b>Flee<soft-line>\n</b>EVADE: 1</soft-line>"
-	back_text: "F"
-	copies: "1"
+	name: "Wing - Member"
+	rule_text: "<sym>P</sym>5: <b>Buffet</b><soft-line>\n<i>Attack action. Target fighter.\n</i>Pass (<sym>SC</sym>12+<sym>D</sym>) to deal 1+<sym>S</sym> (minimum 1) wounds to target.</soft-line>\n<sym>P</sym>All: <b>Flee<soft-line>\n</b><i>Action. Cannot be targeted. Uses two active wings. Can only be done if all <sym>P</sym> is available.<soft-line>\n</soft-line></i>Add 3 to your <sym>D</sym> for this round. If you receive no wounds until the end of the round, leave combat.</soft-line>"
 card:
-	stylesheet: equipment
 	has_styling: false
 	notes: 
 	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-28 00:08:48
-	extra_data:
-		ritualhex-equipment:
-			mse_version: 2.0.1
-		ritualhex-member: mse_version: 2.0.1
-	name: "Spear"
-	image: local_image_file("image4")
-	rule_text: "<sym>P</sym>6: Equip in two hands.\n<sym>P</sym>4: <b>Strike</b><soft-line>\nPass (<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d+1+<sym>S</sym></soft-line>\n<sym>P</sym>2: <b>Block<soft-line>\n</b>BLK: 3</soft-line>"
-card:
-	stylesheet: memberHoriz
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-25 03:09:35
+	time_modified: 2015-10-08 03:42:19
 	extra_data:
 		ritualhex-member: mse_version: 2.0.1
-		ritualhex-memberHoriz:
-			mse_version: 2.0.1
-	name: "Back Right Paw"
-	rule_text: "<sym>P</sym>4: <b>Strike</b><soft-line>\nPass (<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d+<sym>S</sym></soft-line>\n<sym>P</sym>All: <b>Flee<soft-line>\n</b>EVADE: 1 (-1 for each inactive paw)</soft-line>"
-	back_text: "N"
-	copies: "11"
-card:
-	stylesheet: equipment
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-27 21:40:30
-	extra_data:
-		ritualhex-equipment:
-			mse_version: 2.0.1
-		ritualhex-member:
-			mse_version: 2.0.1
-	name: "Dagger"
-	image: local_image_file("image8")
-	rule_text: "<sym>P</sym>2: Equip in hand.\n<sym>P</sym>3: <b>Strike</b><soft-line>\n</soft-line>P<soft-line>ass (<sym>SC</sym>10+<sym>D</sym>): Effect\nDMG: 1d</soft-line>\n<sym>P</sym>2: <b>Parry<soft-line>\n</b>BLK: 1</soft-line>"
-card:
-	stylesheet: equipment
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-27 21:39:57
-	extra_data:
-		ritualhex-equipment:
-			mse_version: 2.0.1
-		ritualhex-member: mse_version: 2.0.1
-	name: "Greataxe"
-	image: local_image_file("image11")
-	rule_text: "<sym>P</sym>7: Equip in two hands.\n<sym>P</sym>6: <b>Cleave<soft-line>\n</b><soft-line>Pass (<sym>SC</sym>14+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>2d+2×<sym>S</sym></soft-line></soft-line>"
-card:
-	stylesheet: memberHoriz
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-28 19:09:43
-	extra_data:
-		ritualhex-member: mse_version: 2.0.1
-		ritualhex-memberHoriz:
-			mse_version: 2.0.1
-	name: "Tentacle 1"
-	rule_text: "<sym>P</sym>5: <b>Strike<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d-1+<sym>S</sym>\n<sym>P</sym>6: <b>Wrap<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>S</sym>): Effect<soft-line>\nUNAP: 6<soft-line>\nUNCHK: (<sym>SC</sym>13+<sym>S</sym>)</soft-line></soft-line>\n<sym>P</sym>6: <b>Disarm<soft-line>\n</b>Pass (<sym>SC</sym>15+<sym>S</sym>): Effect</soft-line>"
-	back_text: "1"
-	copies: "23"
-card:
-	stylesheet: equipment
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-28 00:06:57
-	extra_data:
-		ritualhex-equipment:
-			mse_version: 2.0.1
-		ritualhex-member: mse_version: 2.0.1
-	name: "Sword"
-	image: local_image_file("image1")
-	rule_text: "<sym>P</sym>4: Equip in hand.\n<sym>P</sym>4: <b>Strike</b><soft-line>\nPass (<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\n</soft-line>DMG: 1d+1+<sym>S</sym></soft-line>\n<sym>P</sym>3: <b>Parry<soft-line>\n</b>BLK: 1</soft-line>"
+	name: "Feet - Member"
+	rule_text: "<sym>P</sym>6: <b>Kick</b><soft-line>\n<i>Attack action. Target fighter.\n</i>Pass (<sym>SC</sym>12+<sym>D</sym>) to deal 1d-1+<sym>S</sym> (minimum 1) wounds to target.</soft-line>\n<sym>P</sym>All: <b>Flee<soft-line>\n</b><i>Action. Cannot be targeted. Can only be done if all <sym>P</sym> is available.<soft-line>\n</soft-line></i>Add 1 to your <sym>D</sym> for this round. If you receive no wounds until the end of the round, leave combat.</soft-line>"
 card:
 	has_styling: false
 	notes: 
 	time_created: 2015-10-06 02:52:22
-	time_modified: 2015-10-25 03:00:30
-	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-		ritualhex-minion: mse_version: 2.0.1
-		ritualhex-standard: mse_version: 2.0.1
-		ritualhex-tracker: mse_version: 2.0.1
-	name: "Right Claw"
-	rule_text: "Can be used as a hand.\n<sym>P</sym>3: <b>Strike<soft-line>\n</b>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d+<sym>S</sym><soft-line>\nCannot be performed while the claw is not free.</soft-line>"
-	back_text: "I"
-	copies: "1"
-card:
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-25 02:58:44
-	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-	name: "Right Wing"
-	rule_text: "<sym>P</sym>All: <b>Flee<soft-line>\n</b>EVADE: 3<soft-line>\nNeeds two active wings to be performed</soft-line></soft-line>"
-	back_text: "L"
-	copies: "1"
-card:
-	stylesheet: memberHoriz
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:52:22
-	time_modified: 2015-10-25 03:00:56
+	time_modified: 2015-10-06 04:06:57
 	extra_data:
 		ritualhex-member: mse_version: 2.0.1
-		ritualhex-memberHoriz:
-			mse_version: 2.0.1
-		ritualhex-minion: mse_version: 2.0.1
-		ritualhex-standard: mse_version: 2.0.1
-		ritualhex-tracker: mse_version: 2.0.1
-	name: "Horns"
-	rule_text: "<sym>P</sym>3: <b>Strike<soft-line>\n</b>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d+<sym>S</sym>"
-	back_text: "M"
-	copies: "1"
-card:
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:52:22
-	time_modified: 2015-10-25 03:03:41
-	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-		ritualhex-minion: mse_version: 2.0.1
-		ritualhex-standard: mse_version: 2.0.1
-		ritualhex-tracker: mse_version: 2.0.1
-	name: "Left Hand"
-	rule_text: "<sym>P</sym>4: <b>Strike<soft-line>\n</b>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d-2+<sym>S</sym><soft-line>\nCannot be performed while the hand is not free.</soft-line>"
-	back_text: "H"
-	copies: "7"
-card:
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:52:22
-	time_modified: 2015-10-25 03:04:03
-	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-		ritualhex-minion: mse_version: 2.0.1
-		ritualhex-standard: mse_version: 2.0.1
-		ritualhex-tracker: mse_version: 2.0.1
-	name: "Right Hand"
-	rule_text: "<sym>P</sym>4: <b>Strike<soft-line>\n</b>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d-2+<sym>S</sym><soft-line>\nCannot be performed while the hand is not free.</soft-line>"
-	back_text: "G"
-	copies: "7"
+	name: "Hand - Member"
+	rule_text: "<sym>P</sym>4: <b>Punch<soft-line>\n</soft-line></b><i>Attack action. Target fighter.<soft-line>\n</i>Pass </soft-line>(<sym>S</sym><sym>C</sym>12+<sym>D</sym>) to deal 1d-2+<sym>S</sym> (minimum 1) wounds to target."
 card:
 	has_styling: false
 	notes: 
 	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-25 03:07:43
-	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-	name: "Front Right Paw"
-	rule_text: "<sym>P</sym>4: <b>Strike</b><soft-line>\nPass (<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d+<sym>S</sym></soft-line>\n<sym>P</sym>All: <b>Flee<soft-line>\n</b>EVADE: 1 (-1 for each inactive paw)</soft-line>"
-	back_text: "N"
-	copies: "11"
-card:
-	stylesheet: memberHoriz
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-25 03:07:49
+	time_modified: 2015-10-08 02:46:59
 	extra_data:
 		ritualhex-member: mse_version: 2.0.1
-		ritualhex-memberHoriz:
-			mse_version: 2.0.1
-	name: "Back Left Paw"
-	rule_text: "<sym>P</sym>4: <b>Strike</b><soft-line>\nPass (<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d+<sym>S</sym></soft-line>\n<sym>P</sym>All: <b>Flee<soft-line>\n</b>EVADE: 1 (-1 for each inactive paw)</soft-line>"
-	back_text: "N"
-	copies: "11"
+	name: "Spear - Equipment"
+	rule_text: "Starter. Equip in two hands.\nDraw cost: <sym>P</sym>6\n<sym>P</sym>4: <b>Stab</b><soft-line>\n<i>Attack action. Target fighter.\n</i>Pass (<sym>SC</sym>12+<sym>D</sym>) to deal 1d+1+<sym>S</sym> (minimum 1) wounds to target.</soft-line>\n<sym>P</sym>2: <b>Block<soft-line>\n</b><i>Block action. Target attack action against you.<soft-line>\n</soft-line></i>Add 3 to the target's check difficulty.</soft-line>"
 card:
 	has_styling: false
 	notes: 
 	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-25 03:07:10
-	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-	name: "Front Left Paw"
-	rule_text: "<sym>P</sym>4: <b>Strike</b><soft-line>\nPass (<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d+<sym>S</sym></soft-line>\n<sym>P</sym>All: <b>Flee<soft-line>\n</b>EVADE: 1 (-1 for each inactive paw)</soft-line>"
-	back_text: "N"
-	copies: "11"
-card:
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-28 19:09:47
-	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-	name: "Tentacle 2"
-	rule_text: "<sym>P</sym>5: <b>Strike<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d-1+<sym>S</sym>\n<sym>P</sym>6: <b>Wrap<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>S</sym>): Effect<soft-line>\nUNAP: 6<soft-line>\nUNCHK: (<sym>SC</sym>13+<sym>S</sym>)</soft-line></soft-line>\n<sym>P</sym>6: <b>Disarm<soft-line>\n</b>Pass (<sym>SC</sym>15+<sym>S</sym>): Effect</soft-line>"
-	back_text: "2"
-	copies: "23"
-card:
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-28 19:09:51
-	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-	name: "Tentacle 3"
-	rule_text: "<sym>P</sym>5: <b>Strike<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d-1+<sym>S</sym>\n<sym>P</sym>6: <b>Wrap<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>S</sym>): Effect<soft-line>\nUNAP: 6<soft-line>\nUNCHK: (<sym>SC</sym>13+<sym>S</sym>)</soft-line></soft-line>\n<sym>P</sym>6: <b>Disarm<soft-line>\n</b>Pass (<sym>SC</sym>15+<sym>S</sym>): Effect</soft-line>"
-	back_text: "3"
-	copies: "23"
-card:
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-28 19:09:56
-	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-	name: "Tentacle 4"
-	rule_text: "<sym>P</sym>5: <b>Strike<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d-1+<sym>S</sym>\n<sym>P</sym>6: <b>Wrap<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>S</sym>): Effect<soft-line>\nUNAP: 6<soft-line>\nUNCHK: (<sym>SC</sym>13+<sym>S</sym>)</soft-line></soft-line>\n<sym>P</sym>6: <b>Disarm<soft-line>\n</b>Pass (<sym>SC</sym>15+<sym>S</sym>): Effect</soft-line>"
-	back_text: "4"
-	copies: "23"
-card:
-	stylesheet: memberHoriz
-	has_styling: false
-	notes: 
-	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-28 19:10:00
+	time_modified: 2015-10-08 03:42:42
 	extra_data:
 		ritualhex-member: mse_version: 2.0.1
-		ritualhex-memberHoriz:
-			mse_version: 2.0.1
-	name: "Tentacle 5"
-	rule_text: "<sym>P</sym>5: <b>Strike<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d-1+<sym>S</sym>\n<sym>P</sym>6: <b>Wrap<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>S</sym>): Effect<soft-line>\nUNAP: 6<soft-line>\nUNCHK: (<sym>SC</sym>13+<sym>S</sym>)</soft-line></soft-line>\n<sym>P</sym>6: <b>Disarm<soft-line>\n</b>Pass (<sym>SC</sym>15+<sym>S</sym>): Effect</soft-line>"
-	back_text: "5"
-	copies: "23"
+	name: "Paw - Member"
+	rule_text: "<sym>P</sym>4: <b>Scratch</b><soft-line>\n<i>Attack action. Target fighter.\n</i>Pass (<sym>SC</sym>12+<sym>D</sym>) to deal 1d+<sym>S</sym> (minimum 1) wounds to target.</soft-line>\n<sym>P</sym>All: <b>Flee<soft-line>\n</b><i>Action. Cannot be targeted. Can only be done if all <sym>P</sym> is available.<soft-line>\n</soft-line></i>Add 1 to your <sym>D</sym> (-1 for each inactive paw) for this round. If you receive no wounds until the end of the round, leave combat.</soft-line>"
 card:
 	has_styling: false
 	notes: 
 	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-28 19:10:04
+	time_modified: 2015-10-07 12:53:53
 	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-	name: "Tentacle 6"
-	rule_text: "<sym>P</sym>5: <b>Strike<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d-1+<sym>S</sym>\n<sym>P</sym>6: <b>Wrap<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>S</sym>): Effect<soft-line>\nUNAP: 6<soft-line>\nUNCHK: (<sym>SC</sym>13+<sym>S</sym>)</soft-line></soft-line>\n<sym>P</sym>6: <b>Disarm<soft-line>\n</b>Pass (<sym>SC</sym>15+<sym>S</sym>): Effect</soft-line>"
-	back_text: "6"
-	copies: "23"
+		ritualhex-member: mse_version: 2.0.1
+	name: "Dagger - Equipment"
+	rule_text: "Starter. Equip in hand.\nDraw cost: <sym>P</sym>2\n<sym>P</sym>3: <b>Slash</b><soft-line>\n<i>Attack action. Target fighter.\n</i>Pass (<sym>SC</sym>10+<sym>D</sym>) to deal 1d wounds to target.</soft-line>\n<sym>P</sym>2: <b>Parry<soft-line>\n</b><i>Block action. Target attack action against you.<soft-line>\n</soft-line></i>Add 1 to the target's check difficulty. If the target fails, you can pay <sym>P</sym> 3 and perform a Dagger's <b>Slash</b> immediately against the target's performer. It cannot be targeted.</soft-line>"
 card:
 	has_styling: false
 	notes: 
 	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-28 19:10:10
+	time_modified: 2015-10-08 02:43:47
 	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-	name: "Tentacle 7"
-	rule_text: "<sym>P</sym>5: <b>Strike<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d-1+<sym>S</sym>\n<sym>P</sym>6: <b>Wrap<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>S</sym>): Effect<soft-line>\nUNAP: 6<soft-line>\nUNCHK: (<sym>SC</sym>13+<sym>S</sym>)</soft-line></soft-line>\n<sym>P</sym>6: <b>Disarm<soft-line>\n</b>Pass (<sym>SC</sym>15+<sym>S</sym>): Effect</soft-line>"
-	back_text: "7"
-	copies: "23"
+		ritualhex-member: mse_version: 2.0.1
+	name: "Greataxe - Equipment"
+	rule_text: "Starter. Equip in two hands.\nDraw cost: <sym>P</sym>7\n<sym>P</sym>6: <b>Cleave<soft-line>\n</b><i>Attack action. Target fighter.<soft-line>\n</i>Pass (<sym>SC</sym>14+<sym>D</sym>) to deal 2d+2×<sym>S</sym> (minimum 1) to target. If the target is knocked out, you can perform a Greataxe's <b>Cleave </soft-line></b>immediately against another target without paying its <sym>P</sym> cost.</soft-line>"
 card:
 	has_styling: false
 	notes: 
 	time_created: 2015-10-06 02:58:13
-	time_modified: 2015-10-28 19:10:16
+	time_modified: 2015-10-08 03:37:25
 	extra_data:
-		ritualhex-member:
-			mse_version: 2.0.1
-	name: "Tentacle 8"
-	rule_text: "<sym>P</sym>5: <b>Strike<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\nDMG: </soft-line>1d-1+<sym>S</sym>\n<sym>P</sym>6: <b>Wrap<soft-line>\n</soft-line></b><soft-line>Pass </soft-line>(<sym>SC</sym>12+<sym>S</sym>): Effect<soft-line>\nUNAP: 6<soft-line>\nUNCHK: (<sym>SC</sym>13+<sym>S</sym>)</soft-line></soft-line>\n<sym>P</sym>6: <b>Disarm<soft-line>\n</b>Pass (<sym>SC</sym>15+<sym>S</sym>): Effect</soft-line>"
-	back_text: "8"
-	copies: "23"
+		ritualhex-member: mse_version: 2.0.1
+	name: "Tentacle - Member"
+	rule_text: "<sym>P</sym>5: <b>Slap<soft-line>\n</soft-line></b><i>Attack action. Target fighter.<soft-line>\n</i>Pass </soft-line>(<sym>SC</sym>12+<sym>D</sym>) to deal 1d+<sym>S</sym> (minimum 1) wounds to target.\n<sym>P</sym>4: <b>Grab<soft-line>\n</soft-line></b><i>Action. Target action using a member.<soft-line>\n</i>Pass </soft-line>(<sym>SC</sym>12+<sym>S</sym>) to cancel target action. Put the success level as delay tokens on one member used for the target.\n<sym>P</sym>6: <b>Disarm<soft-line>\n</b><i>Action. Target action using a piece of equipment.</i>\nPass (<sym>SC</sym>15+<sym>S</sym>) to cancel target action. The item used for the target is dropped.</soft-line>"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-06 02:58:13
+	time_modified: 2015-10-08 02:45:24
+	extra_data:
+		ritualhex-member: mse_version: 2.0.1
+	name: "Sword - Equipment"
+	rule_text: "Starter. Equip in hand.\nDraw cost: <sym>P</sym>4\n<sym>P</sym>4: <b>Slash</b><soft-line>\n<i>Attack action. Target fighter.\n</i>Pass (<sym>SC</sym>12+<sym>D</sym>) to deal 1d+1+<sym>S</sym> (minimum 1) wounds to target.</soft-line>\n<sym>P</sym>3: <b>Parry<soft-line>\n</b><i>Block action. Target attack action against you.<soft-line>\n</soft-line></i>Add 1 to the target's check difficulty. If the target fails, you can pay <sym>P</sym> 4 and perform a Sword's <b>Slash</b> immediately against the target's performer. It cannot be targeted.</soft-line>"
 version_control:
 	type: none
 apprentice_code: 
