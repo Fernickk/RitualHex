@@ -1,0 +1,309 @@
+﻿mse_version: 2.0.1
+game: ritualhex
+stylesheet: standard
+styling:
+	ritualhex-standard:
+		mse_version: 2.0.1
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 20:50:53
+	time_modified: 2015-10-06 01:56:00
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Armory"
+	image: local_image_file("image8")
+	rule_text: "<sym>F</sym>: Spawn minion group A.\n<sym>X</sym>: Pass (<sym>O</sym><sym>C</sym>12) to draw ® pieces of equipment."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 20:56:43
+	time_modified: 2015-10-06 02:01:02
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Dungeon"
+	image: local_image_file("image4")
+	rule_text: "<sym>F</sym>: Spawn minion group C and place a prisoner on the room.\n<sym>X</sym>, remove prisoner: Each hero on the room receives ® wishes. A wish can be drawing a piece of equipment, getting any perk, or removing all wounds from any one hero."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 21:20:31
+	time_modified: 2015-10-29 18:59:12
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Map Room"
+	image: local_image_file("image5")
+	rule_text: "<sym>F</sym>: Spawn minion group D.\n<sym>X</sym>: Pass (<sym>OC</sym>12) to scout ® unflipped rooms anywhere. Don't activate the <sym>F</sym> effect."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 21:24:25
+	time_modified: 2015-10-03 11:07:04
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Dark Channel"
+	image: local_image_file("image6")
+	rule_text: "<sym>F</sym>: Spawn minion group E.\n<sym>A</sym>: Substract the ®-th lowest die from the next Dark Ritual. If there are less than ® die, substract the highest."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 21:24:25
+	time_modified: 2015-10-03 11:07:14
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Dark Channel"
+	image: local_image_file("image7")
+	rule_text: "<sym>F</sym>: Spawn minion group F.\n<sym>A</sym>: Substract the ®-th lowest die from the next Dark Ritual. If there are less than ® die, substract the highest."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 21:44:21
+	time_modified: 2015-10-03 11:07:51
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Healing Haven"
+	image: local_image_file("image10")
+	rule_text: "<sym>F</sym>: Spawn minion group G.\n<sym>A</sym>: Heal 6×® wounds on you. Minions can take this action."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 21:48:41
+	time_modified: 2015-10-06 02:02:27
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Training Room"
+	image: local_image_file("image11")
+	rule_text: "<sym>F</sym>: Spawn minion group H.\n<sym>X</sym>: Pass (<sym>S</sym><sym>C</sym>11) to gain 6×® XP. This XP is gained in addition to the normal XP gain for successful checks."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 21:48:41
+	time_modified: 2015-10-06 02:02:51
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Cave-in"
+	image: local_image_file("image12")
+	rule_text: "<sym>F</sym>: Place ® boulders on the corridor opposite to the one used to access this room.\nHeroes or minions can't pass through corridors with boulders.\n<sym>X</sym>: Pass (<sym>S</sym><sym>C</sym>12) to remove a boulder from an adjacent corridor."
+	copies: "x4"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 21:55:34
+	time_modified: 2015-10-06 02:07:32
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Flooding"
+	image: local_image_file("image13")
+	rule_text: "Heroes or minions must pass (<sym>S</sym><sym>C</sym>10+2×®) to leave this room, or the cost of the move is spent but no movement takes place."
+	copies: "x3"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 22:03:55
+	time_modified: 2015-10-06 02:06:51
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Sleeping Gas"
+	image: local_image_file("image14")
+	rule_text: "Any hero or minion entering this room or starting the Hero Phase here must pass (<sym>S</sym><sym>C</sym>10+2×®) or lose all <sym>X</sym> and <sym>P</sym> until the next Hero Phase."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 22:05:11
+	time_modified: 2015-10-06 02:08:41
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Trap"
+	image: local_image_file("image15")
+	rule_text: "<sym>F</sym>: Each entering hero must pass (<sym>O</sym><sym>C</sym>10+2×®) or receive ®d wounds.\nIf this room was scouted, reduce the difficulty of the <sym>F</sym> effect's check by 6."
+	copies: "x6"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 22:08:58
+	time_modified: 2015-10-03 11:11:57
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Mystic Stream"
+	image: local_image_file("image1")
+	rule_text: "<sym>X</sym>: Take a Mystic Stream card and place it on the room. This effect is replaced by the one on the card. The card's effect takes place upon reveal."
+	copies: "x6"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 22:10:03
+	time_modified: 2015-10-29 18:55:51
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Smuggler"
+	image: local_image_file("image17")
+	rule_text: "<sym>F</sym>: Put a smuggler on the room, then draw ® pieces of equipment and put them face-down under the smuggler. This equipment cannot be picked up. If any minion enters this room, remove the smuggler and all its equipment.\n<sym>X</sym>: Examine the equipment under the smuggler, take one piece, then put two of your pieces under the smuggler."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 22:12:25
+	time_modified: 2015-10-03 10:40:54
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Portal"
+	image: local_image_file("image18")
+	rule_text: "<sym>X</sym>: If the other Portal room is face up, travel to the other Portal room."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 22:13:01
+	time_modified: 2015-10-03 11:18:42
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Stairs"
+	image: local_image_file("image28")
+	rule_text: "<sym>F</sym>: Open a corridor to the next ring. If there are more than one room accessible from here, pick one."
+	copies: "x4"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 22:13:52
+	time_modified: 2015-10-03 11:20:24
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Entrance"
+	image: local_image_file("image29")
+	rule_text: "This room starts face up. Heroes begin their quest here."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-09-14 20:01:21
+	time_modified: 2015-10-03 11:14:09
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Transforming Waters"
+	image: local_image_file("image25")
+	rule_text: "<sym>X</sym>: Lose a perk, then get a perk."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-09-14 20:01:55
+	time_modified: 2015-10-03 11:13:38
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Poisoned Waters"
+	image: local_image_file("image23")
+	rule_text: "<sym>X</sym>: The stream deals 2d wounds to you."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-01 01:36:33
+	time_modified: 2015-10-03 11:13:07
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Healing Waters"
+	image: local_image_file("image21")
+	rule_text: "<sym>X</sym>: The stream heals 1d wounds from you."
+	copies: "x2"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-01 01:38:09
+	time_modified: 2015-10-03 11:12:27
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Displacing Waters"
+	image: local_image_file("image2")
+	rule_text: "<sym>X</sym>: Roll 1d and travel to the closest:\n1 - Entrance, Stairs or Portal.\n2 - Room where minions spawned.\n3 - Cave-in, Flooding or Sleeping Gas.\n4 - Trap\n5 - Other Mystic Stream\nDon't travel on a 6 or if there's no revealed room of that type."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-01 01:41:45
+	time_modified: 2015-10-06 01:57:34
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Enlightening Waters"
+	image: local_image_file("image3")
+	rule_text: "<sym>X</sym>: Pass (<sym>C</sym>12) to gain XP equal to the success level. This XP is gained in addition to the normal XP gain for passed checks."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-01 01:45:40
+	time_modified: 2015-10-29 18:57:33
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Soporific Waters"
+	image: local_image_file("image24")
+	rule_text: "<sym>X</sym>: Get 2 sleep tokens. Lose any remaining <sym>X</sym> for this phase. Your <sym>P</sym> is 0 and all your attributes are halved as long as you have any sleep tokens. At the beginning of each Hero Phase, remove one sleep token from you. All your wounds are healed when the last token is removed."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-01 01:50:01
+	time_modified: 2015-10-03 11:13:22
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Insanity Waters"
+	image: local_image_file("image22")
+	rule_text: "<sym>X</sym>: Lose two perks. You hear maniacal laughter in the distance."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 20:50:53
+	time_modified: 2015-10-29 18:53:35
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Armory"
+	image: local_image_file("image9")
+	rule_text: "<sym>F</sym>: Spawn minion group B.\n<sym>X</sym>: Pass (<sym>+OC</sym>12) to draw ® pieces of equipment."
+	copies: "x1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-03-16 22:12:25
+	time_modified: 2015-10-03 10:42:33
+	extra_data:
+		ritualhex-standard:
+			mse_version: 2.0.1
+	name: "Portal"
+	image: local_image_file("image19")
+	rule_text: "<sym>X</sym>: If the other Portal room is face up, travel to the other Portal room."
+	copies: "x1"
+version_control:
+	type: none
+apprentice_code: 

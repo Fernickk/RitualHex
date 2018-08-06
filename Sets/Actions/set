@@ -1,0 +1,361 @@
+﻿mse_version: 2.0.1
+game: ritualhex
+stylesheet: action
+styling:
+	ritualhex-action:
+		mse_version: 2.0.1
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 18:45:10
+	time_modified: 2017-08-29 18:07:18
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Body part"
+			requires: "Claw"
+	name: "Claw attack"
+	image: local_image_file("image3")
+	rule_text: "Attack action"
+	back_text: "<b>Check:</b> [<sym>S</sym>(1)] vs. [<sym>D</sym>]\nDeal [2] - [target's <sym>R</sym>] wounds to the target."
+	fighter: "Imp"
+	action_points: "3"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:39:02
+	time_modified: 2017-08-29 18:22:11
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Body part"
+			requires: "None"
+	name: "Fire breath"
+	image: local_image_file("image6")
+	rule_text: "Magic action"
+	back_text: "<b>Check:</b> [<sym>M</sym>(3)] vs. [<sym>D</sym>]\nDeal 1 wound to the target."
+	fighter: "Imp"
+	action_points: "5"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:57:39
+	time_modified: 2017-08-29 18:12:41
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "None"
+			requires: "Two wings"
+	name: "Fly"
+	image: local_image_file("image7")
+	rule_text: "Action"
+	back_text: "<i>Can only be resolved if you have no wounds on your wings.\nWhile performing this action: add 3 to your  <sym>D</sym>. If you receive a wound or one of your body parts is held, cancel this action.\n</i><b>Check: </b>None\nMove to an adjacent, unblocked room."
+	fighter: "Imp"
+	action_points: "3"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:49:55
+	time_modified: 2017-08-30 17:07:10
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "None"
+			requires: "Legs"
+	name: "Walk"
+	image: local_image_file("image8")
+	rule_text: "Action"
+	back_text: "<i>Add 1 to the <sym>T</sym> cost for each wound on your legs.\nWhile performing this action: add 2 to your  <sym>D</sym>. If you receive a wound or one of your body parts is held, cancel this action.</i>\n<b>Check:</b> None\nMove to an adjacent, unblocked room."
+	fighter: "Imp"
+	action_points: "6*"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:49:55
+	time_modified: 2017-09-06 13:37:55
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Fighter"
+			requires: "Feet"
+	name: "Defend other"
+	image: local_image_file("image13")
+	rule_text: "Block action - Interrupt"
+	back_text: "<i>Interrupt an attack action targeting a fighter (or body part) other than you (or yours).</i>\n<b>Check:</b> [2] vs. [<sym>O</sym>]\nChange the target of the interrupted action to be you (or one of your body parts). If the action has more than one target, choose only one of those targets to change."
+	fighter: "Thrall"
+	action_points: "3"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 18:45:10
+	time_modified: 2016-07-28 22:38:38
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Body part"
+			requires: "Legs"
+	name: "Kick"
+	image: local_image_file("image2")
+	rule_text: "Attack action"
+	back_text: "<b>Check:</b> [<sym>S</sym>(1)] vs. [<sym>D</sym>]\nDeal [2] - [target's <sym>R</sym>] wounds to the target."
+	fighter: "Thrall"
+	action_points: "5"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 18:45:10
+	time_modified: 2016-07-28 22:37:28
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Body part"
+			requires: "Hand"
+	name: "Punch"
+	image: local_image_file("image4")
+	rule_text: "Attack action"
+	back_text: "<b>Check:</b> [<sym>S</sym>(1)] vs. [<sym>D</sym>]\nDeal [1] - [target's <sym>R</sym>] wounds to the target."
+	fighter: "Thrall"
+	action_points: "4"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:49:55
+	time_modified: 2016-12-09 13:35:45
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "None"
+			requires: "Legs"
+	name: "Walk"
+	image: local_image_file("image5")
+	rule_text: "Action"
+	back_text: "<i>Add 1 to the <sym>T</sym> cost for each wound on your legs.\nWhile performing this action: add 2 to your  <sym>D</sym>. If you receive a wound or one of your body parts is held, cancel this action.</i>\n<b>Check:</b> None\nMove to an adjacent, unblocked room."
+	fighter: "Thrall"
+	action_points: "4*"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:49:55
+	time_modified: 2016-12-09 13:33:36
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "None"
+			requires: "Legs"
+	name: "Walk"
+	image: local_image_file("image16")
+	rule_text: "Action"
+	back_text: "<i>Add 1 to the <sym>T</sym> cost for each wound on your legs.\nWhile performing this action: add 2 to your  <sym>D</sym>. If you receive a wound or one of your body parts is held, cancel this action.</i>\n<b>Check:</b> None\nMove to an adjacent, unblocked room."
+	fighter: "Acolyte"
+	action_points: "4*"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 18:45:10
+	time_modified: 2016-07-28 22:35:42
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Body part"
+			requires: "Hand"
+	name: "Punch"
+	image: local_image_file("image15")
+	rule_text: "Attack action"
+	back_text: "<b>Check:</b> [<sym>S</sym>(1)] vs. [<sym>D</sym>]\nDeal [1] - [target's <sym>R</sym>] wounds to the target."
+	fighter: "Acolyte"
+	action_points: "4"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:49:55
+	time_modified: 2017-08-29 18:36:03
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Body part"
+			requires: "Hand"
+	name: "Heal"
+	image: local_image_file("image10")
+	rule_text: "Magic action"
+	back_text: "<b>Check:</b> [<sym>M</sym>(2)] vs. 1\nRemove up to [2] wounds from the target."
+	fighter: "Acolyte"
+	action_points: "5"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:49:55
+	time_modified: 2017-09-06 13:38:10
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Fighter"
+			requires: "Hand"
+	name: "Counterspell"
+	image: local_image_file("image1")
+	rule_text: "Magic action - Interrupt"
+	back_text: "<i>Interrupt a magic action.\n</i><b>Check:</b> [<sym>M</sym>(2)] vs. [<sym>M</sym>]\nIncrease the difficulty of the interrupted action's check by 1. If the action has no check, it now has a check of [<sym>M</sym>] vs. 1."
+	fighter: "Acolyte"
+	action_points: "3"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 18:45:10
+	time_modified: 2017-08-31 13:21:02
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Body part"
+			requires: "Head"
+	name: "Bite"
+	image: local_image_file("image11")
+	rule_text: "Attack action"
+	back_text: "<b>Check:</b> [<sym>S</sym>(2)] vs. [<sym>D</sym>].\nDeal [2] - [target's <sym>R</sym>] wounds to the target. You may hold the target body part with your head. You may release the hold at any time. Your <sym>D</sym> and <sym>P</sym> is decreased by 2 while the fighter being held resolves an action."
+	fighter: "Hell Hound"
+	action_points: "5"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 18:45:10
+	time_modified: 2017-08-31 13:22:31
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Body part being held by your head"
+			requires: "None"
+	name: "Gnaw"
+	image: local_image_file("image9")
+	rule_text: "Attack action"
+	back_text: "<i>Cannot be interrupted.</i>\n<b>Check:</b> None\nDeal [1] - [target's <sym>R</sym>] wounds to the target."
+	fighter: "Hell Hound"
+	action_points: "3"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:49:55
+	time_modified: 2017-08-31 13:25:37
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "None"
+			requires: "All paws"
+	name: "Prowl"
+	image: local_image_file("image9")
+	rule_text: "Action"
+	back_text: "<i>Add 1 to the <sym>T</sym> cost for each wound on your legs.\nWhile performing this action: add 2 to your  <sym>D</sym>. If you receive a wound or one of your body parts is held, cancel this action.\n</i><b>Check:</b> None\nMove to an adjacent, unblocked room."
+	fighter: "Hell Hound"
+	action_points: "3*"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 18:45:10
+	time_modified: 2017-08-31 14:04:39
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Fighter"
+			requires: "All paws"
+	name: "Pounce"
+	image: local_image_file("image12")
+	rule_text: "Attack action"
+	back_text: "<b>Check:</b> [<sym>S</sym>(2)] vs. [<sym>S</sym>].\nReduce the <sym>T</sym> place of the target by 2. You may follow this action with a Bite action, reducing the <sym>T</sym> cost by 2."
+	fighter: "Hell Hound"
+	action_points: "4"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-12-09 13:46:47
+	time_modified: 2016-12-09 13:50:00
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Body part"
+			requires: "Head"
+	name: "Gore"
+	image: local_image_file("image14")
+	rule_text: "Attack action"
+	back_text: "<b>Check:</b> [<sym>S</sym>(3)] vs. [<sym>D</sym>]\nDeal [1] - [target's <sym>R</sym>] wounds to the target. Cancel any action the target has in progress."
+	fighter: "Axe Fiend"
+	action_points: "6"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:49:55
+	time_modified: 2016-12-09 13:35:45
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "None"
+			requires: "Legs"
+	name: "Walk"
+	image: local_image_file("image14")
+	rule_text: "Action"
+	back_text: "<i>Add 1 to the <sym>T</sym> cost for each wound on your legs.\nWhile performing this action: add 2 to your  <sym>D</sym>. If you receive a wound or one of your body parts is held, cancel this action.</i>\n<b>Check:</b> None\nMove to an adjacent, unblocked room."
+	fighter: "Axe Fiend"
+	action_points: "6*"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-12-09 13:54:14
+	time_modified: 2016-12-09 13:55:29
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Body part"
+			requires: "Claw"
+	name: "Claw attack"
+	image: local_image_file("image17")
+	rule_text: "Attack action"
+	back_text: "<b>Check:</b> [<sym>S</sym>(1)] vs. [<sym>D</sym>]\nDeal [2] - [target's <sym>R</sym>] wounds to the target."
+	fighter: "Succubus"
+	action_points: "4"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:57:39
+	time_modified: 2016-12-09 13:35:18
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "None"
+			requires: "Two wings"
+	name: "Fly"
+	image: local_image_file("image17")
+	rule_text: "Action"
+	back_text: "<i>Can only be resolved if you have no wounds on your wings.\nWhile performing this action: add 3 to your  <sym>D</sym>. If you receive a wound or one of your body parts is held, cancel this action.\n</i><b>Check: </b>None\nMove to an adjacent, unblocked room."
+	fighter: "Succubus"
+	action_points: "3"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:49:55
+	time_modified: 2016-12-09 13:35:35
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "None"
+			requires: "Legs"
+	name: "Walk"
+	image: local_image_file("image17")
+	rule_text: "Action"
+	back_text: "<i>Add 1 to the <sym>T</sym> cost for each wound on your legs.\nWhile performing this action: add 2 to your  <sym>D</sym>. If you receive a wound or one of your body parts is held, cancel this action.</i>\n<b>Check:</b> None\nMove to an adjacent, unblocked room."
+	fighter: "Succubus"
+	action_points: "4*"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2016-07-24 19:49:55
+	time_modified: 2017-08-31 14:05:17
+	extra_data:
+		ritualhex-action:
+			mse_version: 2.0.1
+			target: "Fighter"
+			requires: "Head"
+	name: "Mind control"
+	image: local_image_file("image17")
+	rule_text: "Magic action"
+	back_text: "<b>Check:</b> [<sym>M</sym>(4)] vs. [<sym>M</sym>]\nControl target fighter during <sym>T</sym>[8]. To mark this, put your Head token on the target's card, with tokens equal to the control time. Each time the <sym>T</sym> advances, remove a token. Return your head Token once the last token is removed."
+	fighter: "Succubus"
+	action_points: "6"
+version_control:
+	type: none
+apprentice_code: 

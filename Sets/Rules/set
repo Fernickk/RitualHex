@@ -1,0 +1,19 @@
+﻿mse_version: 2.0.1
+game: ritualhex
+stylesheet: rules
+styling:
+	ritualhex-rules:
+		mse_version: 2.0.1
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-12 23:30:20
+	time_modified: 2015-10-12 23:31:58
+	extra_data:
+		ritualhex-rules:
+			mse_version: 2.0.1
+	name: "Actions"
+	rule_text: "sadasdasda\n"
+version_control:
+	type: none
+apprentice_code: 

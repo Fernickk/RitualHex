@@ -1,0 +1,266 @@
+﻿mse_version: 2.0.1
+game: ritualhex
+stylesheet: minion
+styling:
+	ritualhex-member: mse_version: 2.0.1
+	ritualhex-minion:
+		mse_version: 2.0.1
+	ritualhex-standard: mse_version: 2.0.1
+	ritualhex-tracker: mse_version: 2.0.1
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-05 03:58:54
+	time_modified: 2015-10-25 02:50:34
+	extra_data:
+		ritualhex-member: mse_version: 2.0.1
+		ritualhex-minion:
+			mse_version: 2.0.1
+		ritualhex-standard: mse_version: 2.0.1
+		ritualhex-tracker: mse_version: 2.0.1
+	name: "Imp"
+	image: local_image_file("image7")
+	rule_text: "<sym>P</sym>5: <b>Fire breath<soft-line>\n</b>Pass </soft-line>(<sym>MC</sym>7+<sym>D</sym>): Effect<soft-line>\n</soft-line>DMG: <color:rgb(255,0,0)>1</color><color:rgb(255,0,0)></color><color:rgb(255,0,0)></color><color:rgb(255,0,0)></color><color:rgb(255,0,0)></color>"
+	back_text: "KML\nICJ\nF"
+	copies: "1"
+	power_cost: "1"
+	action_points: "9"
+	hit_points: "5"
+	strength: "0"
+	defense: "0"
+	magic: "0"
+	perception: "1"
+	damage_reduction: "0"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-05 03:58:54
+	time_modified: 2015-10-25 02:52:47
+	extra_data:
+		ritualhex-minion:
+			mse_version: 2.0.1
+		ritualhex-standard: mse_version: 2.0.1
+		ritualhex-tracker: mse_version: 2.0.1
+	name: "Thrall"
+	image: local_image_file("image10")
+	rule_text: "Spear equipped.\n<sym>P</sym>2: <b>Defend other<soft-line>\n</soft-line></b>Pass (<sym>OC</sym>10+<sym>O</sym>): Effect</color></color></color></color><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)>"
+	back_text: "GCH\nF"
+	copies: "7"
+	power_cost: "1"
+	action_points: "6"
+	hit_points: "8"
+	strength: "1"
+	defense: "0"
+	magic: "3"
+	perception: "0"
+	damage_reduction: "0"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-05 03:58:54
+	time_modified: 2015-10-25 02:52:58
+	extra_data:
+		ritualhex-minion:
+			mse_version: 2.0.1
+		ritualhex-standard: mse_version: 2.0.1
+		ritualhex-tracker: mse_version: 2.0.1
+	name: "Hell Hound"
+	image: local_image_file("image13")
+	rule_text: "<sym>P</sym>5: <b>Bite<soft-line>\n</soft-line></b>Pass (<sym>SC</sym>12+<sym>D</sym>): Effect<soft-line>\n</soft-line>DMG: 1d+<color:rgb(255,0,0)>2</color>\n<sym>P</sym>6: <b>Howl<soft-line>\n</soft-line></b>Pass (<sym>MC</sym>11+<sym>S</sym>): Effect</color></color></color></color><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)>"
+	back_text: "NCN\nNN"
+	copies: "11"
+	power_cost: "2"
+	action_points: "10"
+	hit_points: "10"
+	strength: "2"
+	defense: "1"
+	magic: "0"
+	perception: "3"
+	damage_reduction: "0"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-05 03:58:54
+	time_modified: 2015-10-25 02:53:08
+	extra_data:
+		ritualhex-minion:
+			mse_version: 2.0.1
+		ritualhex-standard: mse_version: 2.0.1
+		ritualhex-tracker: mse_version: 2.0.1
+	name: "Acolyte"
+	image: local_image_file("image4")
+	rule_text: "Dagger equipped.\n<sym><color:rgb(255,0,0)></color>P</sym>5: <b>Heal<soft-line>\n</soft-line></b>Pass (<soft-line><sym>MC</sym>12): Effect<soft-line>\n</soft-line>HEAL: 1d+1</soft-line>\n<sym>P</sym>3: <b>Counterspell<soft-line>\n</soft-line></b>Pass (<sym>MC</sym>11+<sym>M</sym>): Effect</color></color></color></color><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)>"
+	back_text: "GCH\nF"
+	copies: "14"
+	power_cost: "2"
+	action_points: "8"
+	hit_points: "12"
+	strength: "1"
+	defense: "3"
+	magic: "2"
+	perception: "1"
+	damage_reduction: "0"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-05 03:58:54
+	time_modified: 2015-10-25 02:51:25
+	extra_data:
+		ritualhex-minion:
+			mse_version: 2.0.1
+		ritualhex-standard: mse_version: 2.0.1
+		ritualhex-tracker: mse_version: 2.0.1
+	name: "Axe Fiend"
+	image: local_image_file("image3")
+	rule_text: "Greataxe equipped. Add 2 bonus dice to CHK on attack actions using a greataxe.</color></color></color></color></color><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)>"
+	back_text: "M\nGCH\nF"
+	copies: "17"
+	power_cost: "3"
+	action_points: "8"
+	hit_points: "15"
+	strength: "4"
+	defense: "4"
+	magic: "0"
+	perception: "0"
+	damage_reduction: "2"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-05 03:58:54
+	time_modified: 2015-10-25 02:53:15
+	extra_data:
+		ritualhex-minion:
+			mse_version: 2.0.1
+		ritualhex-standard: mse_version: 2.0.1
+		ritualhex-tracker: mse_version: 2.0.1
+	name: "Succubus"
+	image: local_image_file("image5")
+	rule_text: "Add <color:rgb(255,0,0)>1</color> to DMG on attack actions using a claw.\n<sym><color:rgb(255,0,0)></color>P</sym>4: <b>Mind control<soft-line>\n</soft-line></b>Pass (<sym>MC</sym>15+<sym>M</sym>): Effect</color></color></color></color></color><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)><color:rgb(255,0,0)>"
+	back_text: "K  L\nICJ\nF"
+	copies: "20"
+	power_cost: "3"
+	action_points: "8"
+	hit_points: "14"
+	strength: "1"
+	defense: "3"
+	magic: "5"
+	perception: "2"
+	damage_reduction: "1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-05 02:50:14
+	time_modified: 2015-10-22 23:07:49
+	extra_data:
+		ritualhex-minion:
+			mse_version: 2.0.1
+		ritualhex-standard: mse_version: 2.0.1
+		ritualhex-tracker: mse_version: 2.0.1
+	name: "Abyss Horror"
+	image: local_image_file("image1")
+	rule_text: "<b>Multi-attack<soft-line>\n</b></soft-line>T: 3\n<sym>P</sym>All: <b>Flee<soft-line>\n</soft-line></b>EVADE: 0"
+	back_text: "812\n7C3\n654"
+	copies: "23"
+	power_cost: "4"
+	action_points: "7"
+	hit_points: "16"
+	strength: "3"
+	defense: "4"
+	magic: "3"
+	perception: "4"
+	damage_reduction: "2"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-05 02:50:14
+	time_modified: 2015-10-25 02:53:23
+	extra_data:
+		ritualhex-minion:
+			mse_version: 2.0.1
+		ritualhex-standard: mse_version: 2.0.1
+		ritualhex-tracker: mse_version: 2.0.1
+	name: "Shadowdancer"
+	image: local_image_file("image6")
+	rule_text: "Sword equipped. Wounds you deal are <color:rgb(255,0,0)>magic</color> and ignore target's <sym>R</sym>.<color:rgb(255,0,0)></color>\n<b>Sneak<soft-line>\n</b></soft-line>SNK: 2\n<sym>P</sym>2: <b>Defend other<soft-line>\n</soft-line></b>Pass (<sym>OC</sym>10+<sym>O</sym>): Effect</color></color><color:rgb(255,0,0)><color:rgb(255,0,0)>"
+	back_text: "GCH\nF"
+	copies: "26"
+	power_cost: "4"
+	action_points: "15"
+	hit_points: "11"
+	strength: "1"
+	defense: "5"
+	magic: "3"
+	perception: "4"
+	damage_reduction: "1"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-05 02:50:14
+	time_modified: 2015-10-26 12:09:39
+	extra_data:
+		ritualhex-minion:
+			mse_version: 2.0.1
+		ritualhex-standard: mse_version: 2.0.1
+		ritualhex-tracker: mse_version: 2.0.1
+	name: "Blighter"
+	image: local_image_file("image8")
+	rule_text: "Add <color:rgb(255,0,0)>1d</color> to DMG on attack actions using a claw. Each time you deal this extra damage, you may remove the same amount of wounds from you.\n<sym><color:rgb(255,0,0)></color>P</sym>5: <b>Life drain<soft-line>\n</soft-line></b>Pass <soft-line>(<sym>MC</sym>11+<sym>M</sym>): Effect</color></soft-line></color><color:rgb(255,0,0)><color:rgb(255,0,0)>"
+	back_text: "ICJ\nF<color:rgb(255,0,0)></color>"
+	copies: "28"
+	power_cost: "6"
+	action_points: "10"
+	hit_points: "15"
+	strength: "0"
+	defense: "3"
+	magic: "5"
+	perception: "1"
+	damage_reduction: "2"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-05 02:50:14
+	time_modified: 2015-10-25 02:52:26
+	extra_data:
+		ritualhex-minion:
+			mse_version: 2.0.1
+		ritualhex-standard: mse_version: 2.0.1
+		ritualhex-tracker: mse_version: 2.0.1
+	name: "Infernal Spawn"
+	image: local_image_file("image9")
+	rule_text: "If any attack action deals wounds to you, deal <color:rgb(255,0,0)>1d </color>wounds to the action's performer.\n<sym>P</sym>5: <b>Fire breath<soft-line>\n</soft-line></b>Pass <soft-line>(<sym>MC</sym>12</soft-line>+<sym>D</sym>): Effect<soft-line>\n</soft-line>DMG: <color:rgb(255,0,0)>2d</color></color><color:rgb(255,0,0)>"
+	back_text: "GCH\nF"
+	copies: "29"
+	power_cost: "6"
+	action_points: "10"
+	hit_points: "20"
+	strength: "2"
+	defense: "3"
+	magic: "3"
+	perception: "2"
+	damage_reduction: "0"
+card:
+	has_styling: false
+	notes: 
+	time_created: 2015-10-05 02:50:14
+	time_modified: 2015-10-25 02:52:19
+	extra_data:
+		ritualhex-minion:
+			mse_version: 2.0.1
+		ritualhex-standard: mse_version: 2.0.1
+		ritualhex-tracker: mse_version: 2.0.1
+	name: "Hulking Demon"
+	image: local_image_file("image11")
+	rule_text: "Remove 1d wounds from you at the end of round.<color:rgb(255,0,0)></color>\n<sym><color:rgb(255,0,0)></color><color:rgb(255,0,0)></color>P</sym>6: <b>Shatter<soft-line>\n</soft-line></b>Pass (<sym>OC</sym>12+<sym>Do</sym>): Effect\n<color:rgb(255,0,0)></color></color><sym><color:rgb(255,0,0)></color><color:rgb(255,0,0)></color>P</sym>8: <b>Quake<soft-line>\n</soft-line></b>CHK: <soft-line>(<sym>OC</sym>14+<sym>O</sym>)</soft-line><color:rgb(255,0,0)></color><color:rgb(255,0,0)>"
+	back_text: "M\nICJ\nF"
+	copies: "30"
+	power_cost: "8"
+	action_points: "10"
+	hit_points: "20"
+	strength: "7"
+	defense: "2"
+	magic: "5"
+	perception: "1"
+	damage_reduction: "4"
+version_control:
+	type: none
+apprentice_code: 
