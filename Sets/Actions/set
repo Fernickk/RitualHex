@@ -72,15 +72,15 @@ card:
 	has_styling: false
 	notes: 
 	time_created: 2016-07-24 19:49:55
-	time_modified: 2017-09-06 13:37:55
+	time_modified: 2017-08-30 17:07:36
 	extra_data:
 		ritualhex-action:
 			mse_version: 2.0.1
-			target: "Fighter"
+			target: "Fighter - Interrupt"
 			requires: "Feet"
 	name: "Defend other"
 	image: local_image_file("image13")
-	rule_text: "Block action - Interrupt"
+	rule_text: "Block action"
 	back_text: "<i>Interrupt an attack action targeting a fighter (or body part) other than you (or yours).</i>\n<b>Check:</b> [2] vs. [<sym>O</sym>]\nChange the target of the interrupted action to be you (or one of your body parts). If the action has more than one target, choose only one of those targets to change."
 	fighter: "Thrall"
 	action_points: "3"
@@ -184,15 +184,15 @@ card:
 	has_styling: false
 	notes: 
 	time_created: 2016-07-24 19:49:55
-	time_modified: 2017-09-06 13:38:10
+	time_modified: 2017-08-30 09:28:35
 	extra_data:
 		ritualhex-action:
 			mse_version: 2.0.1
-			target: "Fighter"
+			target: "Fighter - Interrupt"
 			requires: "Hand"
 	name: "Counterspell"
 	image: local_image_file("image1")
-	rule_text: "Magic action - Interrupt"
+	rule_text: "Magic action"
 	back_text: "<i>Interrupt a magic action.\n</i><b>Check:</b> [<sym>M</sym>(2)] vs. [<sym>M</sym>]\nIncrease the difficulty of the interrupted action's check by 1. If the action has no check, it now has a check of [<sym>M</sym>] vs. 1."
 	fighter: "Acolyte"
 	action_points: "3"
