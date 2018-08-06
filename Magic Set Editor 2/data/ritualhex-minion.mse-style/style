@@ -1,0 +1,230 @@
+mse version: 0.3.8
+game: ritualhex
+short name: Minion
+installer group: ritualhex/Minion
+icon: card-sample.png
+position hint: 02
+
+version: 2009-08-08
+depends on:
+	package: ritualhex.mse-game
+	version: 2009-08-08
+depends on:
+	package: ritual-icons.mse-symbol-font
+	version: 2007-10-27
+
+card width: 338
+card height: 472
+card dpi: 150
+
+############################################################## Extra scripts
+############################################################## Extra style
+############################################################## Card fields
+card style:
+	############################# Name line
+	name:
+		left: 66
+		top : 5
+		width: 265
+		height: 40
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Birch Std
+			size: 30
+			color: rgb(36,26,5)
+	copies:
+		left: 5
+		top : 5
+		width: 40
+		height: 46
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Birch Std
+			size: 32
+			color: rgb(36,26,5)
+	############################# Image
+	image:
+		left: 0
+		top: 0
+		width: 338
+		height: 410
+		z index: 0
+	############################# Text box
+	rule text:
+		left: 76
+		top : 310
+		width: 186
+		height: 156
+		font:
+			name: Tahoma
+			size: 12
+			scale down to: 4
+			color: rgb(0,0,0)
+		symbol font:
+			name: ritual-icons
+			alignment: bottom center
+			scale down to: 0.5
+			size: 3.6
+		alignment: middle left
+		z index: 3
+		padding left: 4
+		padding top: 4
+		padding right: 4
+		padding bottom: 4
+		line height hard: 1.5
+		line height line: 1.5
+		line height soft: 0.9
+		line height hard max: 1.5
+		line height line max: 1.5
+
+	back text:
+		left: 210
+		top : 180
+		width: 120
+		height: 120
+		font:
+			name: RitualHex
+			size: 26
+			color: rgb(238,224,186)
+			shadow color: rgba(0,0,0,128)
+			shadow displacement x: 3
+			shadow displacement y: 3
+			shadow blur: 0
+		alignment: bottom center
+		z index: 3
+		padding left: 4
+		padding top: 4
+		padding right: 4
+		padding bottom: 4
+		line height hard: 1
+		line height line: 1
+		line height soft: 1
+		line height hard max: 1
+		line height line max: 1
+
+
+	power cost:
+		left: 35
+		top : 320
+		width: 32
+		height: 30
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Tahoma
+			size: 20
+			color: rgb(36,26,5)
+
+	hit points:
+		left: 35
+		top : 356
+		width: 32
+		height: 30
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Tahoma
+			size: 20
+			color: rgb(36,26,5)
+
+	action points:
+		left: 35
+		top : 392
+		width: 32
+		height: 30
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Tahoma
+			size: 20
+			color: rgb(36,26,5)
+
+	damage reduction:
+		left: 35
+		top : 428
+		width: 32
+		height: 30
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Tahoma
+			size: 20
+			color: rgb(36,26,5)
+
+	strength:
+		left: 271
+		top : 320
+		width: 32
+		height: 30
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Tahoma
+			size: 20
+			color: rgb(36,26,5)
+
+	perception:
+		left: 271
+		top : 356
+		width: 32
+		height: 30
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Tahoma
+			size: 20
+			color: rgb(36,26,5)
+
+	magic:
+		left: 271
+		top : 392
+		width: 32
+		height: 30
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Tahoma
+			size: 20
+			color: rgb(36,26,5)
+
+	defense:
+		left: 271
+		top : 428
+		width: 32
+		height: 30
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Tahoma
+			size: 20
+			color: rgb(36,26,5)
+
+
+extra card field:
+	type: choice
+	name: background
+	choice: none
+	editable: false
+	save value: false
+extra card style:
+	background:
+		left: 0
+		top: 0
+		width: 338
+		height: 472
+		z index: 1
+		render style: image
+		image: card-normal.png
+

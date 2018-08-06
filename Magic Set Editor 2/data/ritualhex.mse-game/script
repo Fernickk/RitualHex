@@ -1,0 +1,44 @@
+﻿	# the rule text filter
+	#  - adds continuous symbols
+	#  - adds counter symbols
+	#  - adds equipment symbols
+	#  - adds field symbols
+	#  - adds quickplay symbols
+	#  - adds ritual symbols
+	#  - adds level symbols
+	#  - adds infinity symbols
+	#  - makes text in parentheses italic
+	text_filter := 
+		# step 1 : remove all automatic tags
+		tag_remove_rule(tag: "<sym-auto>") +
+		# step 2 : expand shortcut words ~ and CARDNAME
+		replace_rule(
+			match: "CARDNAME",
+			in_context: "(^|[[:space:]]|\\()<match>", # TODO: Allow any punctuation before
+			replace: "<atom-cardname></atom-cardname>"
+			) +
+		replace_rule(
+			match: "'(\\d+)'",
+			in_context: "(^|[[:space:]]|\\()<match>", # TODO: Allow any punctuation before
+			replace: "<color:rgb(255,0,0)>\\1</color>"
+			) +
+		# step 3 : fill in the cardname atom field
+		tag_contents_rule(
+			tag: "<atom-cardname>",
+			contents: { if card.name=="" then "CARDNAME" else card.name }
+			);
+	cost_filter := 
+		# step 1 : remove all automatic tags
+		tag_remove_rule(tag: "<sym-auto>") +
+		# step 2 : symbols
+		replace_rule(
+			match: "[|Q|W|E|R|]",
+			replace: "<sym-auto>&</sym-auto>" );
+	
+	type_over_list := replace_rule(match:" ?/", replace:"")
+	
+	space_to_wltags := replace_rule(match:"( +|<soft> </soft>)",
+	                                replace:{"</word-list-{list_type}>{_1}<word-list-{list_type}>"})
+
+	# Default foil for a card
+	foil := { "none" }

@@ -1,0 +1,10 @@
+﻿
+############################################################## Card pack items
+pack type:
+	name: card
+############################################################## Card packs
+pack type:
+	name: booster pack
+	item:
+		name: card
+		amount: 8

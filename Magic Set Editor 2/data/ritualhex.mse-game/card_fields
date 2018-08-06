@@ -1,0 +1,112 @@
+
+############################################################## Card fields
+############################# Background stuff
+card field:
+	type: choice
+	name: foils
+	editable: false
+	choice: none
+	default: foil()
+
+############################# Name line
+card field:
+	type: text
+	name: name
+	identifying: true
+	show statistics: false
+	card list visible: true
+	card list column: 1
+
+############################# Image
+card field:
+	type: image
+	name: image
+	show statistics: false
+
+############################# Text box
+card field:
+	type: text
+	name: rule text
+	script: text_filter(input: value, card_name: card.name)
+	show statistics: false
+	multi line: true
+	description: The rules text of the minion
+
+############################# Text box
+card field:
+	type: text
+	name: back text
+	script: text_filter(input: value, card_name: card.name)
+	show statistics: false
+	multi line: true
+	description: The expanded rules text of the minion
+
+card field:
+	type: text
+	name: fighter
+	identifying: false
+	show statistics: false
+
+############################# Power Cost (Minions)
+card field:
+	type: text
+	name: power cost
+	identifying: false
+	show statistics: true
+
+
+############################# Action Points
+card field:
+	type: text
+	name: action points
+	identifying: false
+	show statistics: true
+	multi line: true
+
+############################# HP
+card field:
+	type: text
+	name: hit points
+	identifying: false
+	show statistics: true
+
+############################# Strength
+card field:
+	type: text
+	name: strength
+	identifying: false
+	show statistics: true
+
+############################# Defense
+card field:
+	type: text
+	name: defense
+	identifying: false
+	show statistics: true
+
+############################# Magic
+card field:
+	type: text
+	name: magic
+	identifying: false
+	show statistics: true
+
+############################# Perception
+card field:
+	type: text
+	name: perception
+	identifying: false
+	show statistics: true
+
+############################# Damage Reduction
+card field:
+	type: text
+	name: damage reduction
+	identifying: false
+	show statistics: true
+
+card field:
+	type: text
+	name: copies
+	identifying: false
+	show statistics: false

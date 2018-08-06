@@ -1,0 +1,63 @@
+mse version: 0.3.8
+game: ritualhex
+short name: Rules
+installer group: ritualhex/Rules
+icon: card-sample.png
+position hint: 03
+
+version: 2009-08-08
+depends on:
+	package: ritualhex.mse-game
+	version: 2009-08-08
+depends on:
+	package: ritual-icons.mse-symbol-font
+	version: 2007-10-27
+
+card width: 540
+card height: 1500
+card dpi: 150
+
+############################################################## Extra scripts
+############################################################## Extra style
+############################################################## Card fields
+card style:
+	############################# Name line
+	name:
+		left: 10
+		top : 10
+		width: 520
+		height: 40
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Birch Std
+			size: 32
+			color: rgb(36,26,5)
+	############################# Text box
+	rule text:
+		left: 10
+		top : 60
+		width: 520
+		height: 1430
+		font:
+			name: Tahoma
+			size: 12
+			scale down to: 4
+			color: rgb(0,0,0)
+		symbol font:
+			name: ritual-icons
+			alignment: bottom center
+			scale down to: 0.5
+			size: 3.6
+		alignment: middle left
+		z index: 3
+		padding left: 4
+		padding top: 4
+		padding right: 4
+		padding bottom: 4
+		line height hard: 1.5
+		line height line: 1.5
+		line height soft: 0.9
+		line height hard max: 1.5
+		line height line max: 1.5

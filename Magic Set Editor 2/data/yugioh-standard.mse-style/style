@@ -1,0 +1,182 @@
+﻿mse version: 0.3.8
+game: yugioh
+short name: Standard
+installer group: yugioh/Standard
+icon: card-sample.png
+position hint: 01
+
+version: 2009-08-08
+depends on:
+	package: yugioh.mse-game
+	version: 2009-08-08
+depends on:
+	package: yugioh-standard-levels.mse-symbol-font
+	version: 2007-10-27
+
+card width: 372
+card height: 524
+card dpi: 150
+
+############################################################## Extra scripts
+############################################################## Extra style
+############################################################## Card fields
+card style:
+	############################# Background stuff
+	card type:
+		left: 0
+		top: 0
+		width: 372
+		height: 524
+		z index: 0
+		render style: image
+		popup style: in place
+		choice images:
+			normal monster: card-normal.png
+	############################# Name line
+	name:
+		left: 16
+		top : 50
+		width: 340
+		height: 44
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 3
+		font:
+			name: PT Banana Split
+			size: 40
+			color: rgb(255,255,255)
+			shadow color: rgba(0,0,0,128)
+			shadow displacement x: 3
+			shadow displacement y: 3
+			shadow blur: 5
+	cost:
+		left: 8
+		top : 8
+		width: 170
+		height: 30
+		z index: 2
+		alignment: "middle left shrink-overflow"
+		font:
+			name: Permanent Marker
+			size: 12
+			color: rgb(0,0,0)
+		symbol font:
+			name: yugioh-standard-levels
+			alignment: middle center
+			scale down to: 0.5
+			size: 5
+	production:
+		left: { 360 - card_style.production.content_width }
+		top : 486
+		height: 30
+		width: { card_style.production.content_width + 4 }
+		z index: 2
+		alignment: "middle right"
+		font:
+			name: Permanent Marker
+			size: 12
+			color: rgb(0,0,0)
+		symbol font:
+			name: yugioh-standard-levels
+			alignment: middle center
+			scale down to: 2
+			size: 5
+	############################# Image
+	image:
+		left: 33
+		top: 96
+		width: 306
+		height: 200
+		z index: 2
+	############################# Text box
+	creature type:
+		left: 38
+		top : 304
+		width: 296
+		height: 30
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Permanent Marker
+			size: 16
+			color: rgb(0,0,0)
+	rule text:
+		left: 38
+		top : 342
+		width: 296
+		height: 106
+		font:
+			name: Verdana
+			size: 28
+			scale down to: 4
+			color: rgb(0,0,0)
+		symbol font:
+			name: yugioh-standard-levels
+			alignment: bottom center
+			scale down to: 0.5
+			size: 12
+		alignment: 
+			script:
+				if (not contains(match:"\n", card.rule_text) and
+				   card_style.rule_text.content_lines <= 2)
+				then "middle center"
+				else "middle left"
+		z index: 3
+		padding left: 4
+		padding top: 4
+		padding right: 4
+		padding bottom: 4
+		line height hard: 1.2
+		line height line: 1.2
+		line height soft: 0.9
+		line height hard max: 1.2
+		line height line max: 1.2
+
+	flavor text:
+		left: 8
+		top: 486
+		width: { 352 - card_style.production.content_width }
+		height: 30
+		font:
+			name: Permanent Marker
+			size: 24
+			scale down to: 4
+			style: italic
+			color: rgb(0,0,0)
+		alignment: "middle center"
+		z index: 3
+		padding left: 4
+		padding top: 4
+		padding right: 4
+		padding bottom: 4
+
+extra card field:
+	type: choice
+	name: cost cloud
+	choice: none
+	editable: false
+	save value: false
+extra card field:
+	type: choice
+	name: separators
+	choice: none
+	editable: false
+	save value: false
+extra card style:
+	cost cloud:
+		left: { min(0, card_style.cost.content_width - 160 } 
+		top: -2
+		width: 194
+		height: 74
+		z index: 1
+		render style: image
+		image: cost-cloud.png
+	separators:
+		left: 33
+		top: 0
+		width: 306
+		height: 466
+		z index: 1
+		render style: image
+		image: separators.png

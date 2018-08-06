@@ -1,0 +1,91 @@
+﻿
+############################################################## Card fields
+############################# Background stuff
+card field:
+	type: choice
+	name: card type
+	choice: normal monster
+	default: card_type()
+	choice colors cardlist:
+		normal monster:	   rgb(120,18,0)
+card field:
+	type: choice
+	name: foils
+	editable: false
+	choice: none
+	default: foil()
+############################# Name line
+card field:
+	type: text
+	name: name
+	identifying: true
+	show statistics: false
+	card list visible: true
+	card list column: 1
+card field:
+	type: text
+	name: cost
+	description: Q = dinero, W = fama, E = voluntad, R = cultura
+	script: cost_filter(value)
+card field:
+	type: text
+	name: production
+	description: Q = dinero, W = fama, E = voluntad, R = cultura
+	script: cost_filter(value)
+
+############################# Image
+card field:
+	type: image
+	name: image
+	show statistics: false
+card field:
+	type: image
+	name: bottom clouds
+	show statistics: false
+############################# Edition and Card ID
+card field:
+	type: text
+	name: number
+	script: pos_of_card(value) + "/" + card_count()
+	card list visible: true
+	card list column: 6
+	card list width: 55
+	card list name: #
+	editable: false
+	save value: false
+	show statistics: false
+card field:
+	type: text
+	name: edition
+	default: set.edition
+	show statistics: false
+############################# Text box
+card field:
+	type: text
+	name: creature type
+	show statistics: false
+	multi line: false
+	description: The type of card
+card field:
+	type: text
+	name: rule text
+	script: text_filter(input: value, card_name: card.name)
+	show statistics: false
+	multi line: true
+	description: The rules text for the card
+card field:
+	type: text
+	name: flavor text
+	script: text_filter(value)
+	show statistics: false
+	multi line: true
+	description: The flavor text for the card
+card field:
+	type: text
+	name: text
+	multi line: true
+	save value: false
+	show statistics: false
+	script:
+		combined_editor(field1: card.rule_text, separator: "<line>\n</line>", field2: card.flavor_text)
+	description: The rules and flavor text for the card; use up and down arrows to switch

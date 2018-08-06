@@ -1,0 +1,42 @@
+﻿mse version: 0.3.6
+version: 2008-10-27
+short name: Standard
+position hint: 001
+icon: star.png
+installer group: CAPU/Symbol Fonts/Standard
+# Symbol font for level symbols
+
+image font size: 16
+horizontal space: 3
+symbol:
+	code: q
+	image: money.png
+symbol:
+	code: Q
+	image: money.png
+symbol:
+	code: w
+	image: star.png
+symbol:
+	code: W
+	image: star.png
+symbol:
+	code: e
+	image: fist.png
+symbol:
+	code: E
+	image: fist.png
+symbol:
+	code: r
+	image: note.png
+symbol:
+	code: R
+	image: note.png
+
+##############################################################
+# Insert-symbol menu
+insert symbol menu:
+	item: q
+	item: w
+	item: e
+	item: r

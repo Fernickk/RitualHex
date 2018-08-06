@@ -1,0 +1,77 @@
+mse version: 0.3.8
+game: ritualhex
+short name: Tracker
+installer group: ritualhex/Tracker
+icon: card-sample.png
+position hint: 02
+
+version: 2009-08-08
+depends on:
+	package: ritualhex.mse-game
+	version: 2009-08-08
+depends on:
+	package: ritual-icons.mse-symbol-font
+	version: 2007-10-27
+
+card width: 180
+card height: 150
+card dpi: 150
+
+############################################################## Extra scripts
+############################################################## Extra style
+############################################################## Card fields
+card style:
+	############################# Name line
+	copies:
+		left: 102
+		top : 108
+		width: 30
+		height: 32
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Birch Std
+			size: 24
+			color: rgb(36,26,5)
+	############################# Image
+	image:
+		left: 5
+		top: -10
+		width: 170
+		height: 207
+		z index: 0
+	############################# Text box
+	action points:
+		left: 52
+		top : 108
+		width: 28
+		height: 30
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+		z index: 2
+		font:
+			name: Birch Std
+			size: 18
+			color: rgb(36,26,5)
+		height: 30
+		alignment: middle center shrink-overflow
+		padding bottom: 0
+
+extra card field:
+	type: choice
+	name: background
+	choice: none
+	editable: false
+	save value: false
+extra card style:
+	background:
+		left: 0
+		top: 0
+		width: 180
+		height: 150
+		z index: 1
+		render style: image
+		image: card-normal.png
+
+

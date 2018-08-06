@@ -1,0 +1,67 @@
+﻿mse version: 0.3.6
+version: 2008-10-27
+short name: Standard
+position hint: 001
+icon: Hex.png
+installer group: ritual/Symbol Fonts/Standard
+# Symbol font for level symbols
+
+image font size: 15
+horizontal space: 1
+vertical space: -25
+symbol:
+	code: A
+	image: AllHex.png
+symbol:
+	code: P
+	image: AP.png
+symbol:
+	code: C
+	image: Check.png
+symbol:
+	code: D
+	image: Defense.png
+symbol:
+	code: F
+	image: FlipHex.png
+symbol:
+	code: H
+	image: Health.png
+symbol:
+	code: X
+	image: Hex.png
+symbol:
+	code: M
+	image: Magic.png
+symbol:
+	code: N
+	image: Minion.png
+symbol:
+	code: O
+	image: Perception.png
+symbol:
+	code: R
+	image: DamageReduction.png
+symbol:
+	code: S
+	image: Strength.png
+symbol:
+	code: T
+	image: Time.png
+
+##############################################################
+# Insert-symbol menu
+insert symbol menu:
+	item: A
+	item: P
+	item: C
+	item: D
+	item: F
+	item: H
+	item: X
+	item: M
+	item: N
+	item: O
+	item: R
+	item: S
+	item: T
