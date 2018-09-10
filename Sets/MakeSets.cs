@@ -22,6 +22,29 @@ class Script
         }
 	}
 
+    public class Symbol
+    {
+        public string Letter { get; set; }
+        public override string ToString() { return "<sym>" + Letter + "</sym>"; }
+    }
+    static public Symbol Str = new Symbol { Letter = "S" };
+    static public Symbol Mag = new Symbol { Letter = "M" };
+    static public Symbol Per = new Symbol { Letter = "O" };
+    static public Symbol Hlt = new Symbol { Letter = "H" };
+    static public Symbol Ddg = new Symbol { Letter = "P" };
+    static public Symbol Def = new Symbol { Letter = "D" };
+    static public Symbol Tim = new Symbol { Letter = "T" };
+
+    static public string Rnd(string v)
+    {
+        return "[" + v + "]";
+    }
+
+    static public string Rnd(Symbol s)
+    {
+        return Rnd(s.ToString());
+    }
+
 	public class Action
 	{
 		public string Name;
@@ -46,7 +69,17 @@ class Script
 		public int LastEntry;
 
 		public List<Action> Actions = new List<Action>();
-	}
+
+        public string StrengthText
+        {
+            get { return Str + "(" + Strength + ")"; }
+        }
+
+        public string MagicText
+        {
+            get { return Mag + "(" + Magic + ")"; }
+        }
+    }
 
 	static public void RenderActions(List<Minion> minions)
 	{
@@ -91,34 +124,59 @@ class Script
         }
 	}
 
-    static public string StrengthText(Minion minion)
+    static public string CheckText(string level, string difficulty)
     {
-        return "<sym>S</sym>(" + minion.Strength + ")";
+        return "<b>Check:</b> " + Rnd(level) + @" vs. " + difficulty;
     }
 
-    static public string MagicText(Minion minion)
+    static public string CheckText()
     {
-        return "<sym>M</sym>(" + minion.Magic + ")";
+        return "<b>Check:</b> None";
     }
 
-    static public string AttackText(string attribute, string damage, bool resistance = true)
+    static public string AttackText(string attribute, string difficulty, string damage, bool resistance = true)
     {
-        return "<b>Check:</b> [" + attribute + @"] vs. [<sym>P</sym>]\nDeal " + damage + (resistance ? " - [target's <sym>D</sym>]" : "") + " <sym>H</sym> to the target.";
+        return CheckText(attribute, difficulty) + @"\n" +
+            "Deal " + damage + (resistance ? " - " + Rnd("target's " + Def) : "") + " " + Hlt + " to the target.";
+    }
+
+    static public string HealText(string attribute, string difficulty, string damage)
+    {
+        return CheckText(attribute, difficulty) + @"\n" +
+            "Remove up to " + damage + " " + Hlt + " from the target. They can be removed from multiple body parts.";
     }
 
     static public string MoveText(int additionalReflex)
     {
-        return @"<i>While performing this action: add " + additionalReflex + @" to your  <sym>P</sym>. If you receive a wound or one of your body parts is held, cancel this action.\n</i><b>Check: </b>None\nMove to an adjacent, unblocked room.";
+        return "<i>While performing this action: add " + additionalReflex + " to your  " + Ddg + ". If you receive a  " + Hlt + " or one of your body parts is held, cancel this action.</i>" + @"\n" +
+            CheckText() + @"\n" +
+            "Move to an adjacent, unblocked room.";
     }
 
     static public string FlyText(int additionalReflex)
     {
-        return @"<i>Can only be resolved if you have no wounds on your wings.</i>\n" + MoveText(additionalReflex);
+        return "<i>Can only be resolved if you have no  " + Hlt + " on your wings.</i>" + @"\n" +
+            MoveText(additionalReflex);
     }
 
     static public string WalkText(int additionalReflex)
     {
-        return @"<i>Add 1 to the  <sym>T</sym> cost for each wound on your legs.</i>\n" + MoveText(additionalReflex);
+        return "<i>Add 1 to the " + Tim + " cost for each  " + Hlt + " on your legs.</i>" + @"\n" +
+            MoveText(additionalReflex);
+    }
+
+    static public string DefendOtherText(string level, string difficulty)
+    {
+        return "<i>Interrupt an attack action targeting a fighter (or body part) other than you (or yours).</i>" + @"\n" +
+            CheckText(level, difficulty) + @"\n" +
+            "Change the target of the interrupted action to be you (or one of your body parts). If the action has more than one target, choose only one of those targets to change.";
+    }
+
+    static public string CounterspellText(string level, string difficulty)
+    {
+        return "<i>Interrupt a magic action.</i>" + @"\n" +
+            CheckText(level, difficulty) + @"\n" +
+            "Increase the difficulty of the interrupted action's check by 1. If the action has no check, it now has a check of " + Rnd(Mag) + " vs. 1.";
     }
 
 	[STAThread]
@@ -138,7 +196,7 @@ class Script
 			Target = "Body part",
 			Requires = "Claw",
 			AP = "3",
-			Text = AttackText(StrengthText(imp), "[2]"),
+			Text = AttackText(imp.StrengthText, Rnd(Ddg), "[2]"),
         });
         imp.Actions.Add(new Action
         {
@@ -147,7 +205,7 @@ class Script
             Target = "Body part",
             Requires = "None",
             AP = "5",
-            Text = AttackText(MagicText(imp), "1", false),
+            Text = AttackText(imp.MagicText, Rnd(Ddg), "1", false),
         });
         imp.Actions.Add(new Action
         {
@@ -167,9 +225,91 @@ class Script
             AP = "6*",
             Text = WalkText(2),
         });
+
+        Minion thrall = new Minion
+        {
+            Name = "Thrall",
+            Image = "image10",
+            FirstEntry = 5,
+            LastEntry = 8,
+        };
+        thrall.Actions.Add(new Action
+        {
+            Name = "Defend Other",
+            Type = "Block action",
+            Target = "Fighter - Interrupt",
+            Requires = "Feet",
+            AP = "3",
+            Text = DefendOtherText("2", Rnd(Per)),
+        });
+        thrall.Actions.Add(new Action
+        {
+            Name = "Punch",
+            Type = "Attack action",
+            Target = "Body part",
+            Requires = "Hand",
+            AP = "4",
+            Text = AttackText(thrall.StrengthText, Rnd(Ddg), "[1]"),
+        });
+        thrall.Actions.Add(new Action
+        {
+            Name = "Walk",
+            Type = "Action",
+            Target = "None",
+            Requires = "Legs",
+            AP = "4*",
+            Text = WalkText(2),
+        });
+
+        Minion acolyte = new Minion
+        {
+            Name = "Acolyte",
+            Image = "image4",
+            FirstEntry = 9,
+            LastEntry = 11,
+        };
+        acolyte.Actions.Add(new Action
+        {
+            Name = "Heal",
+            Type = "Magic action",
+            Target = "Fighter",
+            Requires = "Hand",
+            AP = "5",
+            Text = HealText(acolyte.MagicText, "1", "[2]"),
+        });
+        acolyte.Actions.Add(new Action
+        {
+            Name = "Counterspell",
+            Type = "Magic action",
+            Target = "Fighter - Interrupt",
+            Requires = "Hand",
+            AP = "3",
+            Text = CounterspellText(acolyte.MagicText, Rnd(Mag)),
+        });
+        acolyte.Actions.Add(new Action
+        {
+            Name = "Punch",
+            Type = "Attack action",
+            Target = "Body part",
+            Requires = "Hand",
+            AP = "4",
+            Text = AttackText(acolyte.StrengthText, Rnd(Ddg), "[1]"),
+        });
+        acolyte.Actions.Add(new Action
+        {
+            Name = "Walk",
+            Type = "Action",
+            Target = "None",
+            Requires = "Legs",
+            AP = "4*",
+            Text = WalkText(2),
+        });
+
         List<Minion> minions = new List<Minion>();
-		minions.Add(imp);
-		RenderActions(minions);
+        minions.Add(imp);
+        minions.Add(thrall);
+        minions.Add(acolyte);
+        RenderActions(minions);
 		Zip();
 	}
 }
