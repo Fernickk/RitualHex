@@ -16,7 +16,7 @@
    id="svg4504"
    inkscape:version="0.92.1 r15371"
    sodipodi:docname="card-normal.svg"
-   inkscape:export-filename="D:\LargeFernickk\DarkRitual\Magic Set Editor 2\data\ritualhex-action.mse-style\card-normal.png"
+   inkscape:export-filename="C:\Users\Fernickk\RitualHex\Magic Set Editor 2\data\ritualhex-action.mse-style\card-normal.png"
    inkscape:export-xdpi="300"
    inkscape:export-ydpi="300">
   <defs
@@ -29,16 +29,16 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="2.6458333"
-     inkscape:cx="132"
-     inkscape:cy="179.99997"
+     inkscape:cx="62.267716"
+     inkscape:cy="246.1417"
      inkscape:document-units="in"
      inkscape:current-layer="layer1"
      showgrid="false"
      units="in"
-     inkscape:window-width="1858"
-     inkscape:window-height="1058"
-     inkscape:window-x="54"
-     inkscape:window-y="260"
+     inkscape:window-width="1197"
+     inkscape:window-height="697"
+     inkscape:window-x="75"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:object-paths="true"
      inkscape:snap-intersection-paths="true"
@@ -52,7 +52,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -108,7 +108,7 @@
        id="path4526"
        inkscape:connector-curvature="0" />
     <g
-       transform="matrix(0.45312355,0,0,0.45312355,95.817631,2424.1161)"
+       transform="matrix(0.45312355,0,0,0.45312355,95.817631,2442.8661)"
        id="g8">
       <path
          style="fill:none"
@@ -127,7 +127,7 @@
     </g>
     <g
        id="g3"
-       transform="matrix(0.02062764,0.04409677,-0.04409677,0.02062764,128.18156,2469.7409)">
+       transform="matrix(0.02062764,0.04409677,-0.04409677,0.02062764,129.2668,2499.17)">
       <path
          d="m 567.52,142.808 c -18.1,-2.46 -27.659,12.74 -28.846,29.688 l -13.495,134.416 c -0.252,6.244 -5.518,11.114 -11.769,10.862 -6.244,-0.245 -11.106,-5.51 -10.861,-11.768 L 510.735,65.963 C 511.333,48.979 498.06,34.729 481.078,34.125 464.094,33.521 449.844,46.8 449.231,63.776 l -7.999,238.13 c 0,5.036 -4.085,9.114 -9.114,9.114 -5.034,0 -9.112,-4.079 -9.112,-9.114 L 422.998,30.759 C 422.998,13.776 409.222,0 392.231,0 375.24,0 361.464,13.775 361.464,30.759 L 361.24,296.85 c 0,5.719 -4.633,10.322 -10.357,10.351 -8.366,0.043 -10.014,-7.826 -10.014,-7.826 C 340.668,298.559 330.611,62.933 330.611,62.933 329.726,45.964 315.248,32.929 298.286,33.821 281.315,34.698 268.274,49.186 269.167,66.148 l 15.919,336.895 c 1.61,10.121 -5.294,19.623 -15.415,21.234 -10.129,1.611 -19.631,-5.279 -21.242,-15.408 L 219.073,289.345 c -4.036,-16.516 -20.688,-26.615 -37.19,-22.587 -16.509,4.042 -26.615,20.695 -22.58,37.197 l 48.714,199.186 c 0.899,3.652 70.445,127.939 95.802,133.902 l -15.81095,110.28248 c 11.49176,71.59962 258.7018,56.81594 260.62067,-6.32438 L 520.169,630.428 c 35.88,-45.924 49.54,-132.113 50.116,-206.328 l 17.407,-248.525 c 1.178,-16.963 -3.57,-30.509 -20.172,-32.767 z"
          id="path5"
@@ -136,7 +136,7 @@
     </g>
     <path
        style="fill:none;stroke:#000000;stroke-width:3.125px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       d="M 95.374016,2525.0442 H 729.62598"
+       d="M 95.374016,2567.1825 H 729.62598"
        id="path4548"
        inkscape:connector-curvature="0" />
   </g>

@@ -63,16 +63,11 @@ card style:
 		left: 230
 		top : 190
 		width: 490
-		height: 40
+		height: 50
 		font:
 			name: Industrial736 BT
-			size: 20
+			size: 25
 			color: rgb(0,0,0)
-		symbol font:
-			name: ritual-icons
-			alignment: bottom center
-			scale down to: 0.5
-			size: 5.4
 		alignment: top left
 		z index: 2
 		padding left: 4
@@ -82,19 +77,19 @@ card style:
 
 	back text:
 		left: 95
-		top : 340
+		top : 390
 		width: 635
-		height: 550
+		height: 500
 		font:
 			name: Industrial736 BT
-			size: 24
+			size: 36
 			scale down to: 4
 			color: rgb(0,0,0)
 		symbol font:
 			name: ritual-icons
 			alignment: bottom center
 			scale down to: 0.5
-			size: 7.2
+			size: 10.8
 		alignment: top left
 		z index: 2
 		padding left: 4
@@ -148,28 +143,28 @@ extra card style:
 
 	target:
 		left: 150
-		top: 235
+		top: 250
 		width: 580
-		height: 40
+		height: 50
 		alignment: middle left shrink-overflow
 		padding bottom: 0
 		z index: 2
 		font:
 			name: Industrial736 BT
-			size: 20
+			size: 25
 			scale down to: 4
 			color: rgb(0,0,0)
 
 	requires:
 		left: 150
-		top: 280
+		top: 310
 		width: 580
-		height: 40
+		height: 50
 		alignment: middle left shrink-overflow
 		padding bottom: 0
 		z index: 2
 		font:
 			name: Industrial736 BT
-			size: 20
+			size: 25
 			scale down to: 4
 			color: rgb(0,0,0)
