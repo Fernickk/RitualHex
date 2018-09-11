@@ -84,10 +84,10 @@ class Script
 	static public void RenderActions(List<Minion> minions)
 	{
         string timestamp = DateTimeOffset.UtcNow.ToString("yyyy-MM-dd hh:mm:ss");
-        if (Directory.Exists("NewActions"))
-            Directory.Delete("NewActions", true);
-        Directory.CreateDirectory("NewActions");
-        using (var writer = new StreamWriter("NewActions/set"))
+        if (Directory.Exists("Actions"))
+            Directory.Delete("Actions", true);
+        Directory.CreateDirectory("Actions");
+        using (var writer = new StreamWriter("Actions/set"))
         {
             writer.WriteLine("mse_version: 2.0.1");
             writer.WriteLine("game: ritualhex");
@@ -115,7 +115,7 @@ class Script
 	                writer.WriteLine("\tback_text: \"" + action.Text + "\"");
 	                writer.WriteLine("\tfighter: \"" + minion.Name + "\"");
                     writer.WriteLine("\taction_points: \"" + action.AP + "\"");
-                    File.Copy(Path.Combine("Minions", minion.Image), Path.Combine("NewActions", minion.Image), true);
+                    File.Copy(Path.Combine("Minions", minion.Image), Path.Combine("Actions", minion.Image), true);
     		    }
 		    }
             writer.WriteLine("version_control:");
@@ -152,6 +152,12 @@ class Script
             "Cancel any action the target may have in progress.";
     }
 
+    static public string SlapText(object attribute, object difficulty, object damage, object action, object timeBonus)
+    {
+        return AttackText(attribute, difficulty, damage) + @"\n" +
+            "You may follow this action with '" + action + ", reducing the " + Time + " cost by " + timeBonus + ".";
+    }
+
     static public string BiteText(object attribute, object difficulty, object damage, object vulnerability)
     {
         return AttackText(attribute, difficulty, damage) + @"\n" +
@@ -165,10 +171,16 @@ class Script
             "Deal " + damage + " - " + Rand("target's " + Defense) + " " + Wound + " to the target.";
     }
 
+    static public string GrabText(object attribute, object difficulty, object vulnerability)
+    {
+        return CheckText(attribute, difficulty) + @"\n" +
+            "Hold the target body part with the used member. You may release the hold at any time. Your " + Defense + " and " + Reflexes + " are decreased by " + vulnerability + " while the fighter being held resolves an action.";
+    }
+
     static public string PounceText(object attribute, object difficulty, object delay, object action, object timeBonus)
     {
         return CheckText(attribute, difficulty) + @"\n" +
-            "Increase the target's " + Time + " by " + delay + ". You may follow this action with '" + action + "', reducing the " + Time + " cost by " + timeBonus + ".";
+            "Increase the target's " + Time + " by " + delay + ". You may follow this action with " + action + ", reducing the " + Time + " cost by " + timeBonus + ".";
     }
 
     static public string MoveText(object additionalReflexes)
@@ -184,15 +196,9 @@ class Script
             MoveText(additionalReflexes);
     }
 
-    static public string WalkText(object additionalReflexes)
+    static public string WalkText(object additionalReflexes, string affectedPart = "legs")
     {
-        return "<i>Add 1 to the " + Time + " cost for each  " + Wound + " on your legs.</i>" + @"\n" +
-            MoveText(additionalReflexes);
-    }
-
-    static public string ProwlText(object additionalReflexes)
-    {
-        return "<i>Add 1 to the " + Time + " cost for each  " + Wound + " on your paws.</i>" + @"\n" +
+        return "<i>Add 1 to the " + Time + " cost for each  " + Wound + " on your " + affectedPart + ".</i>" + @"\n" +
             MoveText(additionalReflexes);
     }
 
@@ -208,6 +214,12 @@ class Script
         return "<i>Interrupt a magic action.</i>" + @"\n" +
             CheckText(level, difficulty) + @"\n" +
             "Increase the difficulty of the interrupted action's check by 1. If the action has no check, it now has a check of " + Rand(Magic) + " vs. 1.";
+    }
+
+    static public string MindControlText(object level, object difficulty, object turns)
+    {
+        return CheckText(level, difficulty) + @"\n" +
+            "Control the target during " + turns + " " + Time + ". Place your Head card as a status marker on the fighter to mark this status. You may cancel this status at any time.";
     }
 
     static public Minion Imp()
@@ -407,7 +419,7 @@ class Script
             Target = "Fighter",
             Requires = "All paws",
             AP = "4",
-            Text = PounceText(hellHound[Strength], Rand(Strength), 2, "Bite", 2),
+            Text = PounceText(hellHound[Strength], Rand(Strength), 2, "'Bite'", 2),
         });
         hellHound.Actions.Add(new Action
         {
@@ -416,7 +428,7 @@ class Script
             Target = "None",
             Requires = "All paws",
             AP = "4*",
-            Text = ProwlText(2),
+            Text = WalkText(2, "paws"),
         });
         return hellHound;
     }
@@ -458,6 +470,107 @@ class Script
         return axeFiend;
     }
 
+    static public Minion Succubus()
+    {
+        Minion succubus = new Minion
+        {
+            Name = "Succubus",
+            Image = "image5",
+            Level = 3,
+            FirstEntry = 18,
+            LastEntry = 19,
+        };
+        succubus.Scores[Strength] = 2;
+        succubus.Scores[Reflexes] = 1;
+        succubus.Scores[Magic] = 4;
+        succubus.Scores[Perception] = 2;
+        succubus.Scores[Defense] = 1;
+        succubus.Scores[Wound] = 8;
+        succubus.Actions.Add(new Action
+        {
+            Name = "Claw Attack",
+            Type = "Attack action",
+            Target = "Body part",
+            Requires = "Claw",
+            AP = "3",
+            Text = AttackText(succubus[Strength], Rand(Reflexes), Rand(2)),
+        });
+        succubus.Actions.Add(new Action
+        {
+            Name = "Fly",
+            Type = "Action",
+            Target = "None",
+            Requires = "Two wings",
+            AP = "2",
+            Text = FlyText(3),
+        });
+        succubus.Actions.Add(new Action
+        {
+            Name = "Mind Control",
+            Type = "Magic action",
+            Target = "Fighter",
+            Requires = "Head",
+            AP = "6",
+            Text = MindControlText(succubus[Magic], Rand(Magic), Rand(8)),
+        });
+        succubus.Actions.Add(new Action
+        {
+            Name = "Walk",
+            Type = "Action",
+            Target = "None",
+            Requires = "Legs",
+            AP = "4*",
+            Text = WalkText(2),
+        });
+        return succubus;
+    }
+
+    static public Minion AbyssHorror()
+    {
+        Minion abyssHorror = new Minion
+        {
+            Name = "Abyss Horror",
+            Image = "image1",
+            Level = 4,
+            FirstEntry = 22,
+            LastEntry = 22,
+        };
+        abyssHorror.Scores[Strength] = 3;
+        abyssHorror.Scores[Reflexes] = 3;
+        abyssHorror.Scores[Magic] = 6;
+        abyssHorror.Scores[Perception] = 3;
+        abyssHorror.Scores[Defense] = 3;
+        abyssHorror.Scores[Wound] = 15;
+        abyssHorror.Actions.Add(new Action
+        {
+            Name = "Slap",
+            Type = "Attack action",
+            Target = "Body part",
+            Requires = "Tentacle",
+            AP = "5",
+            Text = SlapText(abyssHorror[Strength], Rand(Reflexes), Rand(2), "'Grab', with the same target and required part", 2),
+        });
+        abyssHorror.Actions.Add(new Action
+        {
+            Name = "Grab",
+            Type = "Attack action",
+            Target = "Body part",
+            Requires = "Tentacle",
+            AP = "6",
+            Text = GrabText(abyssHorror[Strength], Rand(Strength), 1),
+        });
+        abyssHorror.Actions.Add(new Action
+        {
+            Name = "Shuffle",
+            Type = "Action",
+            Target = "None",
+            Requires = "All tentacles",
+            AP = "6*",
+            Text = WalkText(1, "tentacles"),
+        });
+        return abyssHorror;
+    }
+
 	[STAThread]
 	static public void Main(string[] args)
 	{
@@ -467,6 +580,8 @@ class Script
         minions.Add(Acolyte());
         minions.Add(HellHound());
         minions.Add(AxeFiend());
+        minions.Add(Succubus());
+        minions.Add(AbyssHorror());
         RenderActions(minions);
         Zip();
     }
