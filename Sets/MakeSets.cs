@@ -64,6 +64,7 @@ class Script
 		public string Image;
         public Dictionary<Attribute, int> Scores = new Dictionary<Attribute, int>();
 		public int Level;
+        public string SpecialRules = "";
 		public int FirstEntry;
 		public int LastEntry;
 
@@ -134,10 +135,16 @@ class Script
         return "<b>Check:</b> None";
     }
 
-    static public string AttackText(object attribute, object difficulty, object damage, bool resistance = true)
+    static public string AttackText(object attribute, object difficulty, object damage)
     {
         return CheckText(attribute, difficulty) + @"\n" +
-            "Deal " + damage + (resistance ? " - " + Rand("target's " + Defense) : "") + " " + Wound + " to the target.";
+            "Deal " + damage + " " + Wound + " to the target.";
+    }
+
+    static public string NegateDefAttackText(object attribute, object difficulty, object damage)
+    {
+        return CheckText(attribute, difficulty) + @"\n" +
+            "Deal " + damage + " " + Wound + " to the target, ignoring their " + Defense + ".";
     }
 
     static public string HealText(object attribute, object difficulty, object damage)
@@ -152,10 +159,10 @@ class Script
             "Cancel any action the target may have in progress.";
     }
 
-    static public string SlapText(object attribute, object difficulty, object damage, object action, object timeBonus)
+    static public string SlapText(object attribute, object difficulty, object damage, object action)
     {
         return AttackText(attribute, difficulty, damage) + @"\n" +
-            "You may follow this action with '" + action + ", reducing the " + Time + " cost by " + timeBonus + ".";
+            "You may follow this action with " + action + ".";
     }
 
     static public string BiteText(object attribute, object difficulty, object damage, object vulnerability)
@@ -164,11 +171,17 @@ class Script
             "You may hold the target body part with your head. You may release the hold at any time. Your " + Defense + " and " + Reflexes + " are decreased by " + vulnerability + " while the fighter being held resolves an action.";
     }
 
+    static public string DrainAttackText(object attribute, object difficulty, object damage)
+    {
+        return AttackText(attribute, difficulty, damage) + @"\n" +
+            "You may remove " + Wound + " from yourself, up to the number of " + Wound + " dealt. They can be removed from multiple body parts.";
+    }
+
     static public string GnawText(object damage)
     {
         return "<i>This action can't be interrupted.</i>" + @"\n" +
             CheckText() + @"\n" +
-            "Deal " + damage + " - " + Rand("target's " + Defense) + " " + Wound + " to the target.";
+            "Deal " + damage + " " + Wound + " to the target.";
     }
 
     static public string GrabText(object attribute, object difficulty, object vulnerability)
@@ -177,17 +190,22 @@ class Script
             "Hold the target body part with the used member. You may release the hold at any time. Your " + Defense + " and " + Reflexes + " are decreased by " + vulnerability + " while the fighter being held resolves an action.";
     }
 
-    static public string PounceText(object attribute, object difficulty, object delay, object action, object timeBonus)
+    static public string PounceText(object attribute, object difficulty, object delay, object action)
     {
         return CheckText(attribute, difficulty) + @"\n" +
-            "Increase the target's " + Time + " by " + delay + ". You may follow this action with " + action + ", reducing the " + Time + " cost by " + timeBonus + ".";
+            "Increase the target's " + Time + " by " + delay + ". You may follow this action with " + action + ".";
+    }
+
+    static public string TeleportText()
+    {
+        return CheckText() + @"\n" +
+            "Move to an adjacent, unblocked room.";
     }
 
     static public string MoveText(object additionalReflexes)
     {
         return "<i>While performing this action: add " + additionalReflexes + " to your  " + Reflexes + ". If you receive a  " + Wound + " or one of your body parts is held, cancel this action.</i>" + @"\n" +
-            CheckText() + @"\n" +
-            "Move to an adjacent, unblocked room.";
+            TeleportText();
     }
 
     static public string FlyText(object additionalReflexes)
@@ -254,7 +272,7 @@ class Script
             Target = "Body part",
             Requires = "None",
             AP = "5",
-            Text = AttackText(imp[Magic], Rand(Reflexes), 1, false),
+            Text = NegateDefAttackText(imp[Magic], Rand(Reflexes), 1),
         });
         imp.Actions.Add(new Action
         {
@@ -284,6 +302,7 @@ class Script
             Name = "Thrall",
             Image = "image10",
             Level = 1,
+            SpecialRules = "May equip a spear or staff without level increase.",
             FirstEntry = 5,
             LastEntry = 8,
         };
@@ -330,6 +349,7 @@ class Script
             Name = "Acolyte",
             Image = "image4",
             Level = 2,
+            SpecialRules = "May equip a dagger without level increase.",
             FirstEntry = 9,
             LastEntry = 11,
         };
@@ -419,7 +439,7 @@ class Script
             Target = "Fighter",
             Requires = "All paws",
             AP = "4",
-            Text = PounceText(hellHound[Strength], Rand(Strength), 2, "'Bite'", 2),
+            Text = PounceText(hellHound[Strength], Rand(Strength), 2, "'Bite', reducing the " + Time + " cost by 2"),
         });
         hellHound.Actions.Add(new Action
         {
@@ -440,6 +460,7 @@ class Script
             Name = "Axe Fiend",
             Image = "image3",
             Level = 3,
+            SpecialRules = "May equip a greataxe and armor without level increase.",
             FirstEntry = 15,
             LastEntry = 17,
         };
@@ -525,6 +546,45 @@ class Script
         return succubus;
     }
 
+    static public Minion ShadowDancer()
+    {
+        Minion shadowDancer = new Minion
+        {
+            Name = "Shadow Dancer",
+            Image = "image6",
+            Level = 4,
+            SpecialRules = "May equip a sword without level increase. " + 
+                "Ignore the " + Defense + " of your targets while performing actions.",
+            FirstEntry = 20,
+            LastEntry = 21,
+        };
+        shadowDancer.Scores[Strength] = 3;
+        shadowDancer.Scores[Reflexes] = 4;
+        shadowDancer.Scores[Magic] = 2;
+        shadowDancer.Scores[Perception] = 2;
+        shadowDancer.Scores[Defense] = 4;
+        shadowDancer.Scores[Wound] = 12;
+        shadowDancer.Actions.Add(new Action
+        {
+            Name = "Kick",
+            Type = "Attack action",
+            Target = "Body part",
+            Requires = "Feet",
+            AP = "4",
+            Text = AttackText(shadowDancer[Strength], Rand(Reflexes), Rand(2)),
+        });
+        shadowDancer.Actions.Add(new Action
+        {
+            Name = "Teleport",
+            Type = "Action",
+            Target = "None",
+            Requires = "None",
+            AP = "4",
+            Text = TeleportText(),
+        });
+        return shadowDancer;
+    }
+
     static public Minion AbyssHorror()
     {
         Minion abyssHorror = new Minion
@@ -548,7 +608,7 @@ class Script
             Target = "Body part",
             Requires = "Tentacle",
             AP = "5",
-            Text = SlapText(abyssHorror[Strength], Rand(Reflexes), Rand(2), "'Grab', with the same target and required part", 2),
+            Text = SlapText(abyssHorror[Strength], Rand(Reflexes), Rand(2), "'Grab', reducing the " + Time + " cost by 2. The target and required tentacle must be the same that were chosen for 'Slap'"),
         });
         abyssHorror.Actions.Add(new Action
         {
@@ -571,6 +631,45 @@ class Script
         return abyssHorror;
     }
 
+    static public Minion Blighter()
+    {
+        Minion blighter = new Minion
+        {
+            Name = "Blighter",
+            Image = "image8",
+            Level = 5,
+            SpecialRules = "When a fighter passes the check of an attack action targeting you, " +
+                "deal [1] " + Wound + " to one of the body parts used to perform the attack.",
+            FirstEntry = 23,
+            LastEntry = 23,
+        };
+        blighter.Scores[Strength] = 3;
+        blighter.Scores[Reflexes] = 2;
+        blighter.Scores[Magic] = 7;
+        blighter.Scores[Perception] = 3;
+        blighter.Scores[Defense] = 3;
+        blighter.Scores[Wound] = 11;
+        blighter.Actions.Add(new Action
+        {
+            Name = "Claw Attack",
+            Type = "Attack action",
+            Target = "Body part",
+            Requires = "Claw",
+            AP = "4",
+            Text = AttackText(blighter[Strength], Rand(Reflexes), Rand(4)),
+        });
+        blighter.Actions.Add(new Action
+        {
+            Name = "Walk",
+            Type = "Action",
+            Target = "None",
+            Requires = "Legs",
+            AP = "5*",
+            Text = WalkText(1),
+        });
+        return blighter;
+    }
+
 	[STAThread]
 	static public void Main(string[] args)
 	{
@@ -581,7 +680,9 @@ class Script
         minions.Add(HellHound());
         minions.Add(AxeFiend());
         minions.Add(Succubus());
+        minions.Add(ShadowDancer());
         minions.Add(AbyssHorror());
+        minions.Add(Blighter());
         RenderActions(minions);
         Zip();
     }
