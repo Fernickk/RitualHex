@@ -48,6 +48,20 @@ symbol:
 symbol:
 	code: T
 	image: Time.png
+symbol:
+	image: mana_circle.png
+	code: ([0-9]+)T
+	regex: yes
+	draw text: 1
+	text margin left:   2
+	text margin right:  2
+	text margin top:    -1.4
+	text margin bottom: -1.4
+	text font:
+		name: Industrial736 BT
+		size: 20
+		scale down to: 4
+		color: rgb(0,0,0)
 
 ##############################################################
 # Insert-symbol menu

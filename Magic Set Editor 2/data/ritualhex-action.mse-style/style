@@ -87,7 +87,7 @@ card style:
 			color: rgb(0,0,0)
 		symbol font:
 			name: ritual-icons
-			alignment: bottom center
+			alignment: middle center
 			scale down to: 0.5
 			size: 10.8
 		alignment: top left
