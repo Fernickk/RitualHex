@@ -61,7 +61,7 @@ class Script
     public class Minion
     {
         public string Name;
-        public string Image;
+        public string Code;
         public Dictionary<Attribute, int> Scores = new Dictionary<Attribute, int>();
         public int Level;
         public string SpecialRules = "";
@@ -107,7 +107,7 @@ class Script
                     writer.WriteLine("\t\t\ttarget: " + action.Target);
                     writer.WriteLine("\t\t\trequires: " + action.Requires);
                     writer.WriteLine("\tname: " + action.Name);
-                    writer.WriteLine("\timage: " + minion.Image);
+                    writer.WriteLine("\timage: " + minion.Code);
                     writer.WriteLine("\trule_text: " + action.Type);
                     writer.WriteLine("\tback_text:");
                     using (var textReader = new StringReader(action.Text))
@@ -122,7 +122,7 @@ class Script
                     }
                     writer.WriteLine("\tfighter: " + minion.Name);
                     writer.WriteLine("\taction_points: " + action.AP);
-                    File.Copy(Path.Combine("Minions", minion.Image), Path.Combine("Actions", minion.Image), true);
+                    File.Copy(Path.Combine(@"..\Resources\MinionImages", minion.Code + ".png"), Path.Combine("Actions", minion.Code), true);
                 }
             }
             writer.WriteLine("version_control:");
@@ -144,7 +144,7 @@ class Script
     static public string AttackText(object attribute, object difficulty, object damage)
     {
         return CheckText(attribute, difficulty) + "\n" +
-            "Deal " + damage + " " + Wound + " to the target.\n\n<sym>56T</sym>: lol";
+            "Deal " + damage + " " + Wound + " to the target.";
     }
 
     static public string NegateDefAttackText(object attribute, object difficulty, object damage)
@@ -228,7 +228,7 @@ class Script
 
     static public string DefendOtherText(object level, object difficulty)
     {
-        return "<i>Interrupt an attack action targeting a fighter (or body part) other than you (or yours).</i>\n" +
+        return "<i>Interrupt an attack action targeting a fighter other than you.</i>\n" +
             CheckText(level, difficulty) + "\n" +
             "Change the target of the interrupted action to be you (or one of your body parts, if the target was a body part). If the action has more than one target, you can change any number of targets directed to the same fighter.";
     }
@@ -251,7 +251,7 @@ class Script
         Minion imp = new Minion
         {
             Name = "Imp",
-            Image = "image7",
+            Code = "imp",
             Level = 1,
             FirstEntry = 1,
             LastEntry = 4,
@@ -306,7 +306,7 @@ class Script
         Minion thrall = new Minion
         {
             Name = "Thrall",
-            Image = "image10",
+            Code = "thrall",
             Level = 1,
             SpecialRules = "May equip a spear or staff without level increase.",
             FirstEntry = 5,
@@ -353,7 +353,7 @@ class Script
         Minion acolyte = new Minion
         {
             Name = "Acolyte",
-            Image = "image4",
+            Code = "acolyte",
             Level = 2,
             SpecialRules = "May equip a dagger without level increase.",
             FirstEntry = 9,
@@ -409,7 +409,7 @@ class Script
         Minion hellHound = new Minion
         {
             Name = "Hell Hound",
-            Image = "image13",
+            Code = "hellHound",
             Level = 2,
             FirstEntry = 12,
             LastEntry = 14,
@@ -464,7 +464,7 @@ class Script
         Minion axeFiend = new Minion
         {
             Name = "Axe Fiend",
-            Image = "image3",
+            Code = "axeFiend",
             Level = 3,
             SpecialRules = "May equip a greataxe and armor without level increase.",
             FirstEntry = 15,
@@ -502,7 +502,7 @@ class Script
         Minion succubus = new Minion
         {
             Name = "Succubus",
-            Image = "image5",
+            Code = "succubus",
             Level = 3,
             FirstEntry = 18,
             LastEntry = 19,
@@ -557,7 +557,7 @@ class Script
         Minion shadowDancer = new Minion
         {
             Name = "Shadow Dancer",
-            Image = "image6",
+            Code = "shadowDancer",
             Level = 4,
             SpecialRules = "May equip a sword without level increase. " + 
                 "Ignore the " + Defense + " of your targets while performing actions.",
@@ -596,7 +596,7 @@ class Script
         Minion abyssHorror = new Minion
         {
             Name = "Abyss Horror",
-            Image = "image1",
+            Code = "abyssHorror",
             Level = 4,
             FirstEntry = 22,
             LastEntry = 22,
@@ -642,10 +642,9 @@ class Script
         Minion blighter = new Minion
         {
             Name = "Blighter",
-            Image = "image8",
+            Code = "blighter",
             Level = 5,
-            SpecialRules = "When a fighter passes the check of an attack action targeting you, " +
-                "deal [1] " + Wound + " to one of the body parts used to perform the attack.",
+            SpecialRules = "Actions targeting you require an extra " + Time,
             FirstEntry = 23,
             LastEntry = 23,
         };
@@ -676,6 +675,54 @@ class Script
         return blighter;
     }
 
+    static public Minion InfernalSpawn()
+    {
+        Minion infernalSpawn = new Minion
+        {
+            Name = "Infernal Spawn",
+            Code = "infernalSpawn",
+            Level = 5,
+            SpecialRules = "When a fighter passes the check of an attack action targeting you, " +
+                "deal [1] " + Wound + " to one of the body parts used to perform the attack.",
+            FirstEntry = 24,
+            LastEntry = 24,
+        };
+        infernalSpawn.Scores[Strength] = 4;
+        infernalSpawn.Scores[Reflexes] = 3;
+        infernalSpawn.Scores[Magic] = 3;
+        infernalSpawn.Scores[Perception] = 2;
+        infernalSpawn.Scores[Defense] = 5;
+        infernalSpawn.Scores[Wound] = 12;
+        infernalSpawn.Actions.Add(new Action
+        {
+            Name = "Punch",
+            Type = "Attack action",
+            Target = "Body part",
+            Requires = "Hand",
+            AP = "4",
+            Text = AttackText(infernalSpawn[Strength], Rand(Reflexes), Rand(4)),
+        });
+        infernalSpawn.Actions.Add(new Action
+        {
+            Name = "Fire Breath",
+            Type = "Magic action",
+            Target = "Body part",
+            Requires = "None",
+            AP = "5",
+            Text = NegateDefAttackText(infernalSpawn[Magic], Rand(Reflexes), Rand(3)),
+        });
+        infernalSpawn.Actions.Add(new Action
+        {
+            Name = "Walk",
+            Type = "Action",
+            Target = "None",
+            Requires = "Legs",
+            AP = "4*",
+            Text = WalkText(2),
+        });
+        return infernalSpawn;
+    }
+
     [STAThread]
     static public void Main(string[] args)
     {
@@ -689,6 +736,7 @@ class Script
         minions.Add(ShadowDancer());
         minions.Add(AbyssHorror());
         minions.Add(Blighter());
+        minions.Add(InfernalSpawn());
         RenderActions(minions);
         Zip();
     }
