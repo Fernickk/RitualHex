@@ -13,9 +13,6 @@ symbol:
 	code: A
 	image: AllHex.png
 symbol:
-	code: P
-	image: AP.png
-symbol:
 	code: C
 	image: Check.png
 symbol:
@@ -25,11 +22,11 @@ symbol:
 	code: F
 	image: FlipHex.png
 symbol:
+	code: G
+	image: Target.png
+symbol:
 	code: H
 	image: Health.png
-symbol:
-	code: X
-	image: Hex.png
 symbol:
 	code: M
 	image: Magic.png
@@ -40,6 +37,9 @@ symbol:
 	code: O
 	image: Perception.png
 symbol:
+	code: P
+	image: AP.png
+symbol:
 	code: R
 	image: DamageReduction.png
 symbol:
@@ -48,6 +48,12 @@ symbol:
 symbol:
 	code: T
 	image: Time.png
+symbol:
+	code: U
+	image: UsedBodyPart.png
+symbol:
+	code: X
+	image: Hex.png
 symbol:
 	image: mana_circle.png
 	code: ([0-9]+)T

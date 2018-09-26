@@ -42,6 +42,8 @@ class Script
     static public Attribute Wound = new Attribute { Letter = "H" };
     static public Attribute Defense = new Attribute { Letter = "D" };
     static public Attribute Time = new Attribute { Letter = "T" };
+    static public Attribute Target = new Attribute { Letter = "G" };
+    static public Attribute UsedBodyPart = new Attribute { Letter = "U" };
 
     static public string Rand(object s)
     {
@@ -133,6 +135,11 @@ class Script
 
     static public string CheckText(object level, object difficulty)
     {
+        return "<b>Check vs. </b>" + Target + "<b>:</b> " + Rand(level) + " vs. " + difficulty;
+    }
+
+    static public string CheckFixedText(object level, object difficulty)
+    {
         return "<b>Check:</b> " + Rand(level) + " vs. " + difficulty;
     }
 
@@ -144,25 +151,25 @@ class Script
     static public string AttackText(object attribute, object difficulty, object damage)
     {
         return CheckText(attribute, difficulty) + "\n" +
-            "Deal " + damage + " " + Wound + " to the target.";
+            "Deal " + damage + " " + Wound + " to " + Target + ".";
     }
 
     static public string NegateDefAttackText(object attribute, object difficulty, object damage)
     {
         return CheckText(attribute, difficulty) + "\n" +
-            "Deal " + damage + " " + Wound + " to the target, ignoring their " + Defense + ".";
+            "Deal " + damage + " " + Wound + " to " + Target + ", ignoring their " + Defense + ".";
     }
 
     static public string HealText(object attribute, object difficulty, object damage)
     {
         return CheckText(attribute, difficulty) + "\n" +
-            "Remove up to " + damage + " " + Wound + " from the target. They can be removed from multiple body parts.";
+            "Remove up to " + damage + " " + Wound + " from " + Target + ". They can be removed from multiple body parts.";
     }
 
     static public string GoreText(object attribute, object difficulty, object damage)
     {
         return AttackText(attribute, difficulty, damage) + "\n" +
-            "Cancel any action the target may have in progress.";
+            "Cancel any action " + Target + " may have in progress.";
     }
 
     static public string SlapText(object attribute, object difficulty, object damage, object action)
@@ -174,7 +181,7 @@ class Script
     static public string BiteText(object attribute, object difficulty, object damage, object vulnerability)
     {
         return AttackText(attribute, difficulty, damage) + "\n" +
-            "You may hold the target body part with your head. You may release the hold at any time. Your " + Defense + " and " + Reflexes + " are decreased by " + vulnerability + " while the fighter being held resolves an action.";
+            "You may pin " + Target + " with " + UsedBodyPart + ".";
     }
 
     static public string DrainAttackText(object attribute, object difficulty, object damage)
@@ -187,31 +194,32 @@ class Script
     {
         return "<i>This action can't be interrupted.</i>\n" +
             CheckText() + "\n" +
-            "Deal " + damage + " " + Wound + " to the target.";
+            "Deal " + damage + " " + Wound + " to " + Target + ".";
     }
 
     static public string GrabText(object attribute, object difficulty, object vulnerability)
     {
         return CheckText(attribute, difficulty) + "\n" +
-            "Hold the target body part with the used member. You may release the hold at any time. Your " + Defense + " and " + Reflexes + " are decreased by " + vulnerability + " while the fighter being held resolves an action.";
+            "Pin " + Target + " with " + UsedBodyPart + ".";
     }
 
     static public string PounceText(object attribute, object difficulty, object delay, object action)
     {
         return CheckText(attribute, difficulty) + "\n" +
-            "Increase the target's " + Time + " by " + delay + ". You may follow this action with " + action + ".";
+            "Increase " + Target + "'s " + Time + " by " + delay + ". You may follow this action with " + action + ".";
     }
 
     static public string TeleportText()
     {
         return CheckText() + "\n" +
-            "Move to an adjacent, unblocked room.";
+            "Move to an adjacent room.";
     }
 
     static public string MoveText(object additionalReflexes)
     {
         return "<i>While performing this action: add " + additionalReflexes + " to your  " + Reflexes + ". If you receive a  " + Wound + " or one of your body parts is held, cancel this action.</i>\n" +
-            TeleportText();
+            CheckText() + "\n" +
+            "Move to an adjacent, unblocked room.";
     }
 
     static public string FlyText(object additionalReflexes)
@@ -230,20 +238,20 @@ class Script
     {
         return "<i>Interrupt an attack action targeting a fighter other than you.</i>\n" +
             CheckText(level, difficulty) + "\n" +
-            "Change the target of the interrupted action to be you (or one of your body parts, if the target was a body part). If the action has more than one target, you can change any number of targets directed to the same fighter.";
+            "Change the target of the interrupted action to be you (or one of your body parts, if the target was a body part). If the interrupted action has more than one target, you can change any number of targets directed to the same fighter.";
     }
 
     static public string CounterspellText(object level, object difficulty)
     {
         return "<i>Interrupt a magic action.</i>\n" +
             CheckText(level, difficulty) + "\n" +
-            "Increase the difficulty of the interrupted action's check by 1. If the action has no check, it now has a check of " + Rand(Magic) + " vs. 1.";
+            "Increase the difficulty of the interrupted action's check by 1. If the interrupted action has no check, it now has a check of " + Rand(Magic) + " vs. 1.";
     }
 
     static public string MindControlText(object level, object difficulty, object turns)
     {
         return CheckText(level, difficulty) + "\n" +
-            "Control the target during " + turns + " " + Time + ". Place your Head card as a status marker on the fighter to mark this status. You may cancel this status at any time.";
+            "Pin " + Target + " with " + UsedBodyPart + ".";
     }
 
     static public Minion Imp()
@@ -542,6 +550,17 @@ class Script
         });
         succubus.Actions.Add(new Action
         {
+            Name = "Hold Control",
+            Type = "Magic action",
+            Target = "Fighter pinned with your Head",
+            Requires = "None",
+            AP = "-",
+            Text = CheckFixedText(succubus[Magic], Rand("+1 tokens on your Head")) + "\n" +
+                "Add a +1 token to your Head.\n" +
+                "<b>Failure: </b> Stop pinning " + Target + " with your Head.",
+        });
+        succubus.Actions.Add(new Action
+        {
             Name = "Walk",
             Type = "Action",
             Target = "None",
@@ -582,7 +601,7 @@ class Script
         shadowDancer.Actions.Add(new Action
         {
             Name = "Teleport",
-            Type = "Action",
+            Type = "Magic action",
             Target = "None",
             Requires = "None",
             AP = "4",
@@ -614,7 +633,7 @@ class Script
             Target = "Body part",
             Requires = "Tentacle",
             AP = "5",
-            Text = SlapText(abyssHorror[Strength], Rand(Reflexes), Rand(2), "'Grab', reducing the " + Time + " cost by 2. The target and required tentacle must be the same that were chosen for 'Slap'"),
+            Text = SlapText(abyssHorror[Strength], Rand(Reflexes), Rand(2), "'Grab', reducing the " + Time + " cost by 2, with the same " + Target + " and " + UsedBodyPart + " as this action"),
         });
         abyssHorror.Actions.Add(new Action
         {
@@ -656,12 +675,12 @@ class Script
         blighter.Scores[Wound] = 11;
         blighter.Actions.Add(new Action
         {
-            Name = "Claw Attack",
+            Name = "Drain Attack",
             Type = "Attack action",
             Target = "Body part",
             Requires = "Claw",
             AP = "4",
-            Text = AttackText(blighter[Strength], Rand(Reflexes), Rand(4)),
+            Text = DrainAttackText(blighter[Strength], Rand(Reflexes), Rand(5)),
         });
         blighter.Actions.Add(new Action
         {
@@ -682,8 +701,7 @@ class Script
             Name = "Infernal Spawn",
             Code = "infernalSpawn",
             Level = 5,
-            SpecialRules = "When a fighter passes the check of an attack action targeting you, " +
-                "deal [1] " + Wound + " to one of the body parts used to perform the attack.",
+            SpecialRules = "When a fighter passes the check of an attack action targeting you, deal [1] " + Wound + " to one of the " + UsedBodyPart + " of the attack.",
             FirstEntry = 24,
             LastEntry = 24,
         };
@@ -723,6 +741,53 @@ class Script
         return infernalSpawn;
     }
 
+    static public Minion HulkingDemon()
+    {
+        Minion hulkingDemon = new Minion
+        {
+            Name = "Hulking Demon",
+            Code = "hulkingDemon",
+            Level = 6,
+            SpecialRules = "Remove " + Rand(3) + " " + Wound + " from you on every full " + Time + "cycle.",
+            FirstEntry = 25,
+            LastEntry = 25,
+        };
+        hulkingDemon.Scores[Strength] = 7;
+        hulkingDemon.Scores[Reflexes] = 2;
+        hulkingDemon.Scores[Magic] = 3;
+        hulkingDemon.Scores[Perception] = 3;
+        hulkingDemon.Scores[Defense] = 4;
+        hulkingDemon.Scores[Wound] = 15;
+        hulkingDemon.Actions.Add(new Action
+        {
+            Name = "Gore",
+            Type = "Attack action",
+            Target = "Body part",
+            Requires = "Head",
+            AP = "6",
+            Text = GoreText(hulkingDemon[Strength], Rand(Reflexes), Rand(2)),
+        });
+        hulkingDemon.Actions.Add(new Action
+        {
+            Name = "Quake",
+            Type = "Attack action",
+            Target = "Body part",
+            Requires = "Head",
+            AP = "6",
+            Text = GoreText(hulkingDemon[Strength], Rand(Reflexes), Rand(2)),
+        });
+        hulkingDemon.Actions.Add(new Action
+        {
+            Name = "Walk",
+            Type = "Action",
+            Target = "None",
+            Requires = "Legs",
+            AP = "4*",
+            Text = WalkText(2),
+        });
+        return hulkingDemon;
+    }
+
     [STAThread]
     static public void Main(string[] args)
     {
@@ -737,6 +802,7 @@ class Script
         minions.Add(AbyssHorror());
         minions.Add(Blighter());
         minions.Add(InfernalSpawn());
+        minions.Add(HulkingDemon());
         RenderActions(minions);
         Zip();
     }
